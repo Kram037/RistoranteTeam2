@@ -17,12 +17,12 @@ public class Start {
         cocaCola.getDrinks();
 
         //Appetizers
-        //MenuAppetizers.getMenu();
-        MenuAppetizers chips = new MenuAppetizers("Chips and Dips", "potatoes, oil, mayo, ketchup", 5);
+        MenuAppetizers chips = new MenuAppetizers("Chips and Dips", "potatoes, oil, mayo, ketchup", 3);
         MenuAppetizers shrimpCocktail = new MenuAppetizers("Shrimp Cocktail", "shrimp, mayo, ketchup", 10);
-
+        MenuAppetizers bruschetta = new MenuAppetizers("Bruschetta", "bread, tomatoes, olive oil, salt, pepper",5);
         chips.getAppetizers();
         shrimpCocktail.getAppetizers();
+        bruschetta.getAppetizers();
 
     }
 }
