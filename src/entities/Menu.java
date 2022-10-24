@@ -1,22 +1,46 @@
 package entities;
+import java.util.List;
 
 public class Menu {
-
-    public String name;
-    public String ingredients;
-    public double price;
-
-    private Menu(){}
-
-    protected Menu(String name, String ingredients, double price){
-        this.name = name;
-        this.ingredients = ingredients;
-        this.price = price;
+     
+    private String restaurantName;
+    
+    private List<Dish> appetizers;
+    private List<Dish> mainCourses;
+    private List<Dish> secondCourses;
+    private List<Dish> desserts;
+    private List<Dish> drinks;
+ 
+    public Menu(){
+        this.restaurantName = "I Secondini";
     }
-
-    public static Menu getMenu(){
-        Menu menu = new Menu();
-        return menu;
+ 
+    public void addAppetizer(Appetizers appetizer){
+       appetizers.add(appetizer);
     }
+ 
+    public void addMainCourse(MainCourses mainCourse){
+       mainCourses.add(mainCourse);
+    }
+ 
+     public void addSecondCourse(SecondCourses secondCourse){
+       secondCourses.add(secondCourse);
+    }
+ 
+     public void addDessert(Desserts dessert){
+       desserts.add(dessert);
+    }
+ 
+     public void addDrink(Drinks drink){
+       drinks.add(drink);
+    }
+ 
+ 
+    public void getMenu(){
+        
+        System.out.println(restaurantName + " " + appetizers + " " + mainCourses + " " + secondCourses
+                + " " + desserts + " " + drinks);
 
+    }
+ 
 }
