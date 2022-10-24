@@ -5,6 +5,7 @@ public class Menu {
     public String name;
     public String ingredients;
     public double price;
+    private Menu instance = new Menu();
 
     private Menu(){}
 
@@ -15,8 +16,7 @@ public class Menu {
     }
 
     public static Menu getMenu(){
-        Menu menu = new Menu();
-        return menu;
+        return instance;
     }
 
 }
