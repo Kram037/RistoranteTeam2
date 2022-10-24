@@ -1,16 +1,9 @@
 package entities;
 
-public class MenuDrinks extends Menu{
+public class Drinks extends Dish{
 
-
-    public MenuDrinks(String name, String ingredients, double price) {
+    public Drinks(String name, String ingredients, double price) {
         super(name, ingredients, price);
-    }
-
-    public void getDrinks(){
-
-        System.out.println(" " + "\nDrink: " + this.name + "  €" + this.price); 
-
     }
 
 }
