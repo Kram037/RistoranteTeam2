@@ -8,7 +8,9 @@ public class MenuDrinks extends Menu{
     }
 
     public void getDrinks(){
-        System.out.println("Drink: " + this.name + "  €" + this.price);
+
+        System.out.println(" " + "\nDrink: " + this.name + "  €" + this.price); 
+
     }
 
 }
