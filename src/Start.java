@@ -1,8 +1,4 @@
-import entities.Appetizers;
-import entities.Desserts;
-import entities.MainCourses;
-import entities.Menu;
-import entities.Drinks;
+import entities.*;
 
 public class Start {
 
@@ -22,6 +18,10 @@ public class Start {
         menu.addMainCourse(new MainCourses("Linguine ai frutti di mare", "linguine e frutti mare", 12));
         menu.addMainCourse(new MainCourses("Carbonara", "spaghetti, uovo, guanciale, pepe e pecorino/parmigiano", 8));
         menu.addMainCourse(new MainCourses("Gnocchetti alla bava", "gnocchi di patate, misto di formaggi", 10));
+
+        menu.addSecondCourse(new SecondCourses("Bistecca alla fiorentina", "carne italiana IGP", 50.00 ));
+        menu.addSecondCourse(new SecondCourses("Cotoletta della nonna", "tanto amore", 5.00 ));
+        menu.addSecondCourse(new SecondCourses("Spezzatino", "ricetta segreta", 8.00));
 
         menu.addDessert(new Desserts("Crema catalana", "Latte, uova, zucchero, limone, cannella, amido di mais (maizena), zucchero di canna.", 10.50));
         menu.addDessert(new Desserts("Budino al cioccolato con foglia oro", "Latte intero, cioccolato fondente, zucchero, burro, amido di mais (maizena)", 25.00));
