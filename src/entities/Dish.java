@@ -11,6 +11,18 @@ public class Dish{
   this.ingredients = ingredients;
   this.price = price;
   }
-  
+
+  @Override
+  public String toString() {
+    return "\n\n" + name  +
+            "  " + price + "€\n" +
+            "ingredients: " + ingredients;
+  }
+
+
+
+
+
+
 
 }
