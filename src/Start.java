@@ -1,4 +1,5 @@
 import entities.Desserts;
+import entities.MainCourses;
 import entities.Menu;
 import entities.Drinks;
 
@@ -10,6 +11,12 @@ public class Start {
 
 
         menu.addDrink(new Drinks("Acqua Ferragni", " ", 7.50));
+        menu.addDrink(new Drinks("Barbera", "Vino rosso", 15));
+        menu.addDrink(new Drinks("CocaCola", "acqua, zucchero, conservanti, ricetta segreta", 15));
+
+        menu.addMainCourse(new MainCourses("Linguine ai frutti di mare", "linguine e frutti mare", 12));
+        menu.addMainCourse(new MainCourses("Carbonara", "spaghetti, uovo, guanciale, pepe e pecorino/parmigiano", 8));
+        menu.addMainCourse(new MainCourses("Gnocchetti alla bava", "gnocchi di patate, misto di formaggi", 10));
 
         menu.addDessert(new Desserts("Crema catalana", "Latte, uova, zucchero, limone, cannella, amido di mais (maizena), zucchero di canna.", 10.50));
         menu.addDessert(new Desserts("Budino al cioccolato con foglia oro", "Latte intero, cioccolato fondente, zucchero, burro, amido di mais (maizena)", 25.00));

@@ -1,15 +1,16 @@
 package entities;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
      
     private String restaurantName;
     
-    private List<Dish> appetizers;
-    private List<Dish> mainCourses;
-    private List<Dish> secondCourses;
-    private List<Dish> desserts;
-    private List<Dish> drinks;
+    private List<Dish> appetizers = new ArrayList<>();
+    private List<Dish> mainCourses = new ArrayList<>();
+    private List<Dish> secondCourses = new ArrayList<>();
+    private List<Dish> desserts = new ArrayList<>();
+    private List<Dish> drinks = new ArrayList<>();
  
     public Menu(){
         this.restaurantName = "I Secondini";
