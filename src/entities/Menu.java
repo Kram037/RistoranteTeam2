@@ -1,11 +1,13 @@
 package entities;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Menu {
      
     private String restaurantName;
     
-    private List<Dish> appetizers;
+    private List<Dish> appetizers = new ArrayList<>();
     private List<Dish> mainCourses;
     private List<Dish> secondCourses;
     private List<Dish> desserts;
@@ -22,25 +24,28 @@ public class Menu {
     public void addMainCourse(MainCourses mainCourse){
        mainCourses.add(mainCourse);
     }
- 
+
      public void addSecondCourse(SecondCourses secondCourse){
        secondCourses.add(secondCourse);
     }
- 
+
      public void addDessert(Desserts dessert){
        desserts.add(dessert);
     }
- 
+
      public void addDrink(Drinks drink){
        drinks.add(drink);
     }
- 
- 
+
+
+
+
+
     public void getMenu(){
         
-        System.out.println(restaurantName + " " + appetizers + " " + mainCourses + " " + secondCourses
+        System.out.println(restaurantName + "\n " + appetizers + "\n " + mainCourses + " " + secondCourses
                 + " " + desserts + " " + drinks);
 
     }
- 
+
 }
