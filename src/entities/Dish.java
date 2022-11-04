@@ -1,28 +1,25 @@
 package entities;
 
-public class Dish{
+
+public abstract class Dish{
   
   private String name;
   private String ingredients; 
   private double price;
-  
-  public Dish(String name, String ingredients, double price){
-  this.name = name;
-  this.ingredients = ingredients;
-  this.price = price;
+
+  private FoodPreferences dishType;
+
+  public Dish(String name, String ingredients, double price, FoodPreferences dishType){
+    this.name = name;
+    this.ingredients = ingredients;
+    this.price = price;
+    this.dishType = dishType;
   }
 
-  @Override
-  public String toString() {
-    return "\n\n" + name  +
-            "  " + price + "€\n" +
-            "ingredients: " + ingredients;
+  public void printDish(){
+    System.out.println("Name: " + name
+            + " - Ingredients: " + ingredients
+            + " - Price : " + price );
   }
-
-
-
-
-
-
 
 }
