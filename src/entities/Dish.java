@@ -1,7 +1,7 @@
 package entities;
 
 
-public abstract class Dish{
+public class Dish{
   
   private String name;
   private String ingredients; 
@@ -14,6 +14,10 @@ public abstract class Dish{
     this.ingredients = ingredients;
     this.price = price;
     this.dishType = dishType;
+  }
+
+  public Dish() {
+
   }
 
   public void printDish(){
