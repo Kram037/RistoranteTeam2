@@ -17,7 +17,7 @@ public class Start {
         drinksList.addDish(drink3);
         menu.addDishMenu(drinksList);
 
-        DishMenu<Appetizers> appetizersList = new DishMenu();
+        DishMenu appetizersList = new DishMenu();
         appetizersList.addDish(new Appetizers("Bruschetta", "Bread, tomatoes, olive oil, garlic", 5, FoodPreferences.VEGAN));
         appetizersList.addDish(new Appetizers("Chips and Dips", "Potatoes, sunflower oil, mayo, ketchup", 3, FoodPreferences.VEGETARIAN));
         appetizersList.addDish(new Appetizers("Shrimp Cocktail", "Shrimp, mayo, ketchup, salt", 10, FoodPreferences.DEFAULT));
