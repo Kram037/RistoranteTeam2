@@ -1,3 +1,4 @@
+import Enumerations.FoodPreferencesEnum;
 import entities.*;
 
 public class Start {
@@ -6,40 +7,61 @@ public class Start {
 
         Menu menu = Menu.getInstance();
 
-        Dish drink = new Drinks("Acqua Ferragni", "Water", 7.50, FoodPreferences.VEGAN);
-        Dish drink2 = new Drinks("Acqua Ferragni", "Water", 7.50, FoodPreferences.VEGAN);
-        Dish drink3 = new Drinks("Acqua Ferragni", "Water", 7.50, FoodPreferences.VEGAN);
+        Dish drink1 = new Drinks("Acqua Ferragni", "Water", 7.50, FoodPreferencesEnum.VEGAN);
+        Dish drink2 = new Drinks("Barbera", "Red Wine", 15, FoodPreferencesEnum.VEGETARIAN);
+        Dish drink3 = new Drinks("CocaCola", "Water, sugar, food preservative, secret recipe", 15, FoodPreferencesEnum.VEGETARIAN);
 
-
-        DishMenu drinksList = new DishMenu();
-        drinksList.addDish(drink);
+        Course drinksList = new Course();
+        drinksList.addDish(drink1);
         drinksList.addDish(drink2);
         drinksList.addDish(drink3);
         menu.addDishMenu(drinksList);
 
-        DishMenu appetizersList = new DishMenu();
-        appetizersList.addDish(new Appetizers("Bruschetta", "Bread, tomatoes, olive oil, garlic", 5, FoodPreferences.VEGAN));
-        appetizersList.addDish(new Appetizers("Chips and Dips", "Potatoes, sunflower oil, mayo, ketchup", 3, FoodPreferences.VEGETARIAN));
-        appetizersList.addDish(new Appetizers("Shrimp Cocktail", "Shrimp, mayo, ketchup, salt", 10, FoodPreferences.DEFAULT));
+
+        Dish appetizer1 = new Appetizers("Bruschetta", "Bread, tomatoes, olive oil, garlic", 5, FoodPreferencesEnum.VEGAN);
+        Dish appetizer2 = new Appetizers("Chips and Dips", "Potatoes, sunflower oil, mayo, ketchup", 3, FoodPreferencesEnum.VEGETARIAN);
+        Dish appetizer3 = new Appetizers("Shrimp Cocktail", "Shrimp, mayo, ketchup, salt", 10, FoodPreferencesEnum.DEFAULT);
+
+        Course appetizersList = new Course();
+        appetizersList.addDish(appetizer1);
+        appetizersList.addDish(appetizer2);
+        appetizersList.addDish(appetizer3);
         menu.addDishMenu(appetizersList);
 
-        DishMenu<MainCourses> mainCoursesList = new DishMenu();
-        mainCoursesList.addDish(new MainCourses("Seafood linguine", "Linguine, seafood", 12, FoodPreferences.DEFAULT));
-        mainCoursesList.addDish(new MainCourses("Carbonara", "Spaghetti, eggs, guanciale, black pepper, pecorino/parmesan cheese", 8, FoodPreferences.DEFAULT));
-        mainCoursesList.addDish(new MainCourses("Gnocchetti alla bava", "Potatoes gnocchi, cheese cream", 10, FoodPreferences.VEGETARIAN));
+
+        Dish mainCourse1 = new MainCourses("Seafood linguine", "Linguine, seafood", 12, FoodPreferencesEnum.DEFAULT);
+        Dish mainCourse2 = new MainCourses("Carbonara", "Spaghetti, eggs, guanciale, black pepper, pecorino/parmesan cheese", 8, FoodPreferencesEnum.DEFAULT);
+        Dish mainCourse3 = new MainCourses("Gnocchetti alla bava", "Potatoes gnocchi, cheese cream", 10, FoodPreferencesEnum.VEGETARIAN);
+
+        Course mainCoursesList = new Course();
+        mainCoursesList.addDish(mainCourse1);
+        mainCoursesList.addDish(mainCourse2);
+        mainCoursesList.addDish(mainCourse3);
         menu.addDishMenu(mainCoursesList);
 
-        DishMenu<SecondCourses> secondCoursesList = new DishMenu();
-        secondCoursesList.addDish(new SecondCourses("Florentine steak", "Italian meat I.G.P.", 50.00, FoodPreferences.DEFAULT));
-        secondCoursesList.addDish(new SecondCourses("Granny's cutlet", "Lots of love", 5.00, FoodPreferences.DEFAULT));
-        secondCoursesList.addDish(new SecondCourses("Meat stew", "Secret ingredients", 8.00, FoodPreferences.DEFAULT));
+
+        Dish secondCourse1 = new SecondCourses("Florentine steak", "Italian meat I.G.P.", 50.00, FoodPreferencesEnum.DEFAULT);
+        Dish secondCourse2 = new SecondCourses("Granny's cutlet", "Lots of love", 5.00, FoodPreferencesEnum.DEFAULT);
+        Dish secondCourse3 = new SecondCourses("Meat stew", "Secret ingredients", 8.00, FoodPreferencesEnum.DEFAULT);
+
+        Course secondCoursesList = new Course();
+        secondCoursesList.addDish(secondCourse1);
+        secondCoursesList.addDish(secondCourse2);
+        secondCoursesList.addDish(secondCourse3);
         menu.addDishMenu(secondCoursesList);
 
-        DishMenu<Desserts> dessertsList = new DishMenu();
-        dessertsList.addDish(new Desserts("Catalan cream", "Milk, eggs, sugar, lemon, cinnamon, cornstarch, brown sugar", 10.50, FoodPreferences.VEGETARIAN));
-        dessertsList.addDish(new Desserts("Chocolate pudding", "Milk, dark chocolate, sugar, butter, cornstarch", 25.00, FoodPreferences.VEGETARIAN));
-        dessertsList.addDish(new Desserts("Fresh fruit salad, super fresh", "Banana, kiwi, strawberries, green apple, tangerine", 5, FoodPreferences.VEGAN));
+
+
+        Dish dessert1 = new Desserts("Catalan cream", "Milk, eggs, sugar, lemon, cinnamon, cornstarch, brown sugar", 10.50, FoodPreferencesEnum.VEGETARIAN);
+        Dish dessert2 = new Desserts("Chocolate pudding", "Milk, dark chocolate, sugar, butter, cornstarch", 25.00, FoodPreferencesEnum.VEGETARIAN);
+        Dish dessert3 = new Desserts("Fresh fruit salad, super fresh", "Banana, kiwi, strawberries, green apple, tangerine", 5, FoodPreferencesEnum.VEGAN);
+
+        Course dessertsList = new Course();
+        dessertsList.addDish(dessert1);
+        dessertsList.addDish(dessert2);
+        dessertsList.addDish(dessert3);
         menu.addDishMenu(dessertsList);
+
 
         menu.printMenu();
     }

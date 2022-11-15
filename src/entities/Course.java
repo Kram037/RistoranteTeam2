@@ -3,7 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DishMenu{
+public class Course {
 
     public List<Dish> dishList = new ArrayList<>();
 
@@ -12,13 +12,11 @@ public class DishMenu{
     }
 
     public void printDishMenu(){
-        System.out.println("Menu " + dishList.get(0).getClass().getSimpleName());
 
-
+        System.out.println("\nMenu " + dishList.get(0).getClass().getSimpleName());
 
         for(Dish dish : dishList){
-
+            dish.printDish();
         }
-
     }
 }
