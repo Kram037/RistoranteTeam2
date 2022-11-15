@@ -1,4 +1,5 @@
 package entities;
+import Enumerations.KidMenuEnum;
 import Enumerations.FoodPreferencesEnum;
 
 public class Dish{
@@ -8,12 +9,14 @@ public class Dish{
   private double price;
 
   private FoodPreferencesEnum dishType;
+  private KidMenuEnum kid;
 
-  public Dish(String name, String ingredients, double price, FoodPreferencesEnum dishType){
+  public Dish(String name, String ingredients, double price, FoodPreferencesEnum dishType, KidMenuEnum kid){
     this.name = name;
     this.ingredients = ingredients;
     this.price = price;
     this.dishType = dishType;
+    this.kid = kid;
   }
 
   public Dish(){}
@@ -21,6 +24,8 @@ public class Dish{
   public void printDish(){
     System.out.println("Name: " + name
             + " - Ingredients: " + ingredients
-            + " - Price : " + price );
+            + " - Price : " + price +
+            " - Preference : " + dishType +
+            " - Kid : " + kid);
   }
 }
