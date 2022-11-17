@@ -1,4 +1,5 @@
-package entities;
+package Entities;
+import Enumerations.DishType;
 import Enumerations.FoodPreferencesEnum;
 
 public class Dish{
@@ -7,12 +8,14 @@ public class Dish{
   private String ingredients; 
   private double price;
 
-  private FoodPreferencesEnum dishType;
+  private FoodPreferencesEnum preference;
+  private DishType dishType;
 
-  public Dish(String name, String ingredients, double price, FoodPreferencesEnum dishType){
+  public Dish(String name, String ingredients, double price, FoodPreferencesEnum preference, DishType dishType){
     this.name = name;
     this.ingredients = ingredients;
     this.price = price;
+    this.preference = preference;
     this.dishType = dishType;
   }
 
