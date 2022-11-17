@@ -8,7 +8,7 @@ public class Menu {
 
     private final String restaurantName = "I Secondini";
 
-    private static List<DishMenu<?>> dishMenus = new ArrayList<>();
+    private static List<Course> dishList = new ArrayList<>();
 
     private Menu(){}
 
@@ -16,15 +16,15 @@ public class Menu {
         return menu;
     }
 
-    public void addDishMenu(DishMenu<?> dishMenu){
-        dishMenus.add(dishMenu);
+    public void addDishMenu(Course dish){
+        dishList.add(dish);
     }
 
     public void printMenu(){
 
         System.out.println(restaurantName);
 
-        for(DishMenu<?> dishMenu : dishMenus){
+        for(Course dishMenu : dishList){
             dishMenu.printDishMenu();
         }
 

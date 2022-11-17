@@ -1,12 +1,12 @@
 package customer;
-import entities.FoodPreferences;
+import Enumerations.FoodPreferencesEnum;
 
 public class Customer {
 
     public String nominal;
-    public FoodPreferences foodPreference;
+    public FoodPreferencesEnum foodPreference;
 
-    public Customer(String nominal, FoodPreferences foodPreference){
+    public Customer(String nominal, FoodPreferencesEnum foodPreference){
         this.nominal = nominal;
         this.foodPreference = foodPreference;
     }
