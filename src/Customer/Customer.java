@@ -1,4 +1,4 @@
-package customer;
+package Customer;
 import Enumerations.FoodPreferencesEnum;
 
 public class Customer {
