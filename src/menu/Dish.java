@@ -1,4 +1,4 @@
-package entities;
+package menu;
 import Enumerations.KidMenuEnum;
 import Enumerations.FoodPreferencesEnum;
 

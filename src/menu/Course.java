@@ -1,4 +1,4 @@
-package entities;
+package menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ public class Course {
         dishList.add(dish);
     }
 
-    public void printDishMenu(){
+    public void printCourse(){
 
         System.out.println("\nMenu " + dishList.get(0).getClass().getSimpleName());
 

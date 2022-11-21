@@ -1,4 +1,4 @@
-package entities;
+package menu;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class Menu {
         System.out.println(restaurantName);
 
         for(Course dishMenu : dishList){
-            dishMenu.printDishMenu();
+            dishMenu.printCourse();
         }
 
     }

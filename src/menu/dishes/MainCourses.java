@@ -1,7 +1,7 @@
-package dishes;
+package menu.dishes;
 import Enumerations.KidMenuEnum;
 import Enumerations.FoodPreferencesEnum;
-import entities.Dish;
+import menu.Dish;
 
 public class MainCourses extends Dish {
 

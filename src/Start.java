@@ -1,14 +1,18 @@
 import Enumerations.KidMenuEnum;
 import Enumerations.FoodPreferencesEnum;
-import customer.Reservation;
-import dishes.*;
-import entities.*;
+import Enumerations.TableStatusEnum;
+import menu.dishes.*;
+import menu.*;
+import reservation.Reservation;
+import reservation.Restaurant;
+import reservation.Table;
 
 public class Start {
 
     public static void main(String[] args) {
 
         Menu menu = Menu.getInstance();
+
 
         Dish drink1 = new Drinks("Acqua Ferragni", "Water", 7.50, FoodPreferencesEnum.VEGAN, KidMenuEnum.YES);
         Dish drink2 = new Drinks("Barbera", "Red Wine", 15, FoodPreferencesEnum.VEGETARIAN, KidMenuEnum.NOT);
@@ -67,6 +71,26 @@ public class Start {
 
 
         menu.printMenu();
+
+        System.out.println();
+        Table table1 = new Table(1, 4, TableStatusEnum.AVAILABLE);
+        Table table2 = new Table(2, 8, TableStatusEnum.AVAILABLE);
+        Table table3 = new Table(3, 2, TableStatusEnum.AVAILABLE);
+        Table table4 = new Table(4, 3, TableStatusEnum.AVAILABLE);
+        Table table5 = new Table(5, 15, TableStatusEnum.AVAILABLE);
+
+        Reservation reservation1 = new Reservation("Rossi", 10);
+        Reservation reservation2 = new Reservation("Bianchi", 16);
+        Reservation reservation3 = new Reservation("De Santis", 2);
+        Reservation reservation4 = new Reservation("Romano", 7);
+        Reservation reservation5 = new Reservation("Bruno", 4);
+
+        Restaurant restaurant = Restaurant.getInstance();
+        restaurant.addTable(reservation1, table5);
+        restaurant.addTable(reservation2, table1);
+        restaurant.addTable(reservation3, table1);
+        restaurant.addTable(reservation4, table2);
+        restaurant.removeTable(reservation4, table2);
 
     }
 }
