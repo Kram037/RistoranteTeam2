@@ -1,5 +1,5 @@
-package Customer;
-import Enumerations.FoodPreferencesEnum;
+package Restaurant;
+import Entities.Enumerations.FoodPreferencesEnum;
 
 public class Customer {
 

@@ -1,4 +1,4 @@
-package Enumerations;
+package Entities.Enumerations;
 
 public enum FoodPreferencesEnum {
 

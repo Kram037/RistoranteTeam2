@@ -1,6 +1,6 @@
 package Entities;
-import Enumerations.DishType;
-import Enumerations.FoodPreferencesEnum;
+import Entities.Enumerations.DishType;
+import Entities.Enumerations.FoodPreferencesEnum;
 
 public class Dish{
   
@@ -21,9 +21,12 @@ public class Dish{
 
   public Dish(){}
 
+  /**
+   * Modifiche da eliminare: IF
+   */
   public void printDish(){
     System.out.println("Name: " + name
             + " - Ingredients: " + ingredients
-            + " - Price : " + price );
+            + " - Price : " + price);
   }
 }

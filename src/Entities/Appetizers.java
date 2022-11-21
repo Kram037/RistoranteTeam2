@@ -1,6 +1,6 @@
 package Entities;
-import Enumerations.DishType;
-import Enumerations.FoodPreferencesEnum;
+import Entities.Enumerations.DishType;
+import Entities.Enumerations.FoodPreferencesEnum;
 
 public class Appetizers extends Dish{
 
