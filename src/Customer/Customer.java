@@ -1,4 +1,4 @@
-package Restaurant;
+package Customer;
 import Entities.Enumerations.FoodPreferencesEnum;
 
 public class Customer {

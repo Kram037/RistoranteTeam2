@@ -1,3 +1,4 @@
+
 package Entities;
 import Entities.Enumerations.DishType;
 import Entities.Enumerations.FoodPreferencesEnum;
@@ -27,6 +28,7 @@ public class Dish{
   public void printDish(){
     System.out.println("Name: " + name
             + " - Ingredients: " + ingredients
-            + " - Price : " + price);
+            + " - Price : " + price
+            + " - Preference : " + dishType);
   }
 }

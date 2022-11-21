@@ -1,3 +1,4 @@
+
 import Entities.Enumerations.DishType;
 import Entities.Enumerations.FoodPreferencesEnum;
 import Entities.*;
@@ -52,6 +53,7 @@ public class Start {
         secondCoursesList.addDish(secondCourse3);
         menu.addDishMenu(secondCoursesList);
 
+
         //----
         Dish dessert1 = new Desserts("Catalan cream", "Milk, eggs, sugar, lemon, cinnamon, cornstarch, brown sugar", 10.50, FoodPreferencesEnum.VEGETARIAN, DishType.DESSERT);
         Dish dessert2 = new Desserts("Chocolate pudding", "Milk, dark chocolate, sugar, butter, cornstarch", 25.00, FoodPreferencesEnum.VEGETARIAN, DishType.DESSERT);
@@ -65,5 +67,6 @@ public class Start {
 
 
         menu.printMenu();
+
     }
 }
