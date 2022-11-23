@@ -9,21 +9,21 @@ import java.util.List;
 public class Course {
 
     /**
-     * The Dish list.
+     * The Dish list that contains all the dishes.
      */
     public List<Dish> dishList = new ArrayList<>();
 
     /**
      * Add dish to the dish list.
      *
-     * @param dish the dish
+     * @param dish the dish added to the list.
      */
     public void addDish(Dish dish){
         dishList.add(dish);
     }
 
     /**
-     * Print the entire menu.
+     * Print the lists of a single course.
      */
     public void printDishMenu(){
 

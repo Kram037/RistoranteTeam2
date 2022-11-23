@@ -16,9 +16,9 @@ public class Menu {
     private Menu(){}
 
     /**
-     * Get instance menu.
+     * Get the instance of the menu.
      *
-     * @return the menu
+     * @return the instance menu.
      */
     public static Menu getInstance(){
         return menu;
@@ -27,14 +27,14 @@ public class Menu {
     /**
      * Add all the dishes lists to the courseList.
      *
-     * @param courseList the course list
+     * @param courseList the list of the dishes.
      */
     public void addDishMenu(Course courseList){
         Menu.courseList.add(courseList);
     }
 
     /**
-     * Print the menu.
+     * Print the entire menu.
      */
     public void printMenu(){
 

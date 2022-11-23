@@ -7,7 +7,7 @@ import enumerations.FoodPreferencesEnum;
 public class Customer {
 
     /**
-     * The customer name used for reservation.
+     * The customer name used to reserve a table in the restaurant.
      */
     public String nominal;
     /**
@@ -18,8 +18,8 @@ public class Customer {
     /**
      * Instantiates a new Customer.
      *
-     * @param nominal        the nominal
-     * @param foodPreference the food preference
+     * @param nominal        the name of the customer.
+     * @param foodPreference the food preference of the customer.
      */
     public Customer(String nominal, FoodPreferencesEnum foodPreference){
         this.nominal = nominal;

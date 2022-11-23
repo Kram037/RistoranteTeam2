@@ -18,10 +18,10 @@ public class Dish{
   /**
    * Instantiates a new Dish.
    *
-   * @param name        the name
-   * @param ingredients the ingredients
-   * @param price       the price
-   * @param preference  the preference
+   * @param name        the name of the dish.
+   * @param ingredients the ingredients of the dish.
+   * @param price       the price of the dish.
+   * @param preference  the preference of the customer.
    */
   public Dish(String name, String ingredients, double price, FoodPreferencesEnum preference){
     this.name = name;
@@ -39,7 +39,7 @@ public class Dish{
   /**
    * Gets name.
    *
-   * @return the name
+   * @return the name of the dish.
    */
   public String getName() {
     return name;
@@ -48,7 +48,7 @@ public class Dish{
   /**
    * Gets ingredients.
    *
-   * @return the ingredients
+   * @return the ingredients of the dish.
    */
   public String getIngredients() {
     return ingredients;
@@ -57,7 +57,7 @@ public class Dish{
   /**
    * Gets price.
    *
-   * @return the price
+   * @return the price of the dish.
    */
   public double getPrice() {
     return price;
@@ -66,7 +66,7 @@ public class Dish{
   /**
    * Gets preference.
    *
-   * @return the preference
+   * @return the preference of the customer.
    */
   public FoodPreferencesEnum getPreference() {
     return preference;
@@ -75,7 +75,7 @@ public class Dish{
   /**
    * Gets dish type enum.
    *
-   * @return the dish type enum
+   * @return the dish type.
    */
   public DishTypeEnum getDishTypeEnum() {
     return dishTypeEnum;
