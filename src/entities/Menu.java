@@ -43,8 +43,5 @@ public class Menu {
         for(Course dishMenu : courseList){
             dishMenu.printDishMenu();
         }
-
     }
-
-
 }
