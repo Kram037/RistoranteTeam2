@@ -79,11 +79,11 @@ public class Start {
         menu.addDishMenu(dessertsList);
 
 
-        menu.printMenu();
+
 
 
         //Restaurant restaurant = new Restaurant(5);
-        //Customer pippo = new Customer("Pippo" , FoodPreferencesEnum.DEFAULT);
+        Customer pippo = new Customer("Pippo" , FoodPreferencesEnum.VEGAN);
         //Customer pluto = new Customer("Pluto" , FoodPreferencesEnum.DEFAULT);
         //Customer paperino = new Customer("Paperino" , FoodPreferencesEnum.DEFAULT);
         //Customer micky = new Customer("Micky" , FoodPreferencesEnum.DEFAULT);
@@ -125,5 +125,7 @@ public class Start {
 
         //restaurant2.emptyTable(minnie);
         //restaurant2.printRestaurant();
+
+        menu.printMenu(pippo);
     }
 }

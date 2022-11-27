@@ -1,4 +1,7 @@
 package entities;
+import customer.Customer;
+import enumerations.FoodPreferencesEnum;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,12 +39,12 @@ public class Menu {
     /**
      * Print the entire menu.
      */
-    public void printMenu(){
+    public void printMenu(Customer customer){
 
         System.out.println(restaurantName);
 
         for(Course dishMenu : courseList){
-            dishMenu.printDishMenu();
+            dishMenu.printDishMenu(customer);
         }
 
     }

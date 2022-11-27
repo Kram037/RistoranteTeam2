@@ -26,4 +26,7 @@ public class Customer {
         this.foodPreference = foodPreference;
     }
 
+    public String getCustomerName() {
+        return "string";
+    }
 }

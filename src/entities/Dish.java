@@ -88,6 +88,6 @@ public class Dish{
     System.out.println("Name: " + name
             + " - Ingredients: " + ingredients
             + " - Price : " + price
-            + " - Preference : " + dishTypeEnum);
+            + " - Preference : " + preference);
   }
 }

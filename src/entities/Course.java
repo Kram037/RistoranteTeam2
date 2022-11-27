@@ -1,5 +1,8 @@
 package entities;
 
+import customer.Customer;
+import enumerations.FoodPreferencesEnum;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,12 +28,15 @@ public class Course {
     /**
      * Print the lists of a single course.
      */
-    public void printDishMenu(){
+    public void printDishMenu(Customer customer){
 
         System.out.println("\nMenu " + dishList.get(0).getClass().getSimpleName());
 
-        for(Dish dish : dishList){
-            dish.printDish();
-        }
+            for (Dish dish : dishList) {
+                if(dish.getPreference().ordinal() >= customer.foodPreference.ordinal()) {
+                    dish.printDish();
+                }
+            }
+
     }
 }
