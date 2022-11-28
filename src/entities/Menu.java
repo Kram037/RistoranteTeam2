@@ -1,5 +1,6 @@
 package entities;
 import customer.Customer;
+import enumerations.FoodPreferencesEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,12 +40,26 @@ public class Menu {
     /**
      * Print the entire menu.
      */
-    public void printMenu(Customer customer){
+    public void printMenu(){
 
-        System.out.println(restaurantName);
+        System.out.println("\n" + restaurantName);
 
         for(Course dishMenu : courseList){
-            dishMenu.printCourse(customer);
+            dishMenu.printCourse();
+        }
+    }
+
+    public void printPreferencedMenu(Customer customer) {
+
+        if (customer.getFoodPreference() == FoodPreferencesEnum.FULL_MENU) {
+            printMenu();
+        } else {
+            System.out.println("\n" + restaurantName);
+            System.out.println("Menu " + customer.getFoodPreference().toString().toLowerCase());
+
+            for (Course dishMenu : courseList) {
+                dishMenu.printPreferencedCourse(customer);
+            }
         }
     }
 }

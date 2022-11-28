@@ -2,12 +2,6 @@
 import customer.Customer;
 import entities.*;
 import enumerations.FoodPreferencesEnum;
-import restaurant.Restaurant;
-import restaurant.Table;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The type Start.
@@ -35,7 +29,7 @@ public class Start {
 
         Dish appetizer1 = new Appetizers("Bruschetta", "Bread, tomatoes, olive oil, garlic", 5, FoodPreferencesEnum.VEGAN);
         Dish appetizer2 = new Appetizers("Chips and Dips", "Potatoes, sunflower oil, mayo, ketchup", 3, FoodPreferencesEnum.VEGETARIAN);
-        Dish appetizer3 = new Appetizers("Shrimp Cocktail", "Shrimp, mayo, ketchup, salt", 10, FoodPreferencesEnum.DEFAULT);
+        Dish appetizer3 = new Appetizers("Shrimp Cocktail", "Shrimp, mayo, ketchup, salt", 10, FoodPreferencesEnum.FULL_MENU);
 
         Course appetizersList = new Course();
         appetizersList.addDish(appetizer1);
@@ -44,8 +38,8 @@ public class Start {
         menu.addDishMenu(appetizersList);
 
 
-        Dish mainCourse1 = new MainCourses("Seafood linguine", "Linguine, seafood", 12, FoodPreferencesEnum.DEFAULT);
-        Dish mainCourse2 = new MainCourses("Carbonara", "Spaghetti, eggs, guanciale, black pepper, pecorino/parmesan cheese", 8, FoodPreferencesEnum.DEFAULT);
+        Dish mainCourse1 = new MainCourses("Seafood linguine", "Linguine, seafood", 12, FoodPreferencesEnum.FULL_MENU);
+        Dish mainCourse2 = new MainCourses("Carbonara", "Spaghetti, eggs, guanciale, black pepper, pecorino/parmesan cheese", 8, FoodPreferencesEnum.FULL_MENU);
         Dish mainCourse3 = new MainCourses("Gnocchetti alla bava", "Potatoes gnocchi, cheese cream", 10, FoodPreferencesEnum.VEGETARIAN);
 
         Course mainCoursesList = new Course();
@@ -55,9 +49,9 @@ public class Start {
         menu.addDishMenu(mainCoursesList);
 
 
-        Dish secondCourse1 = new SecondCourses("Florentine steak", "Italian meat I.G.P.", 50.00, FoodPreferencesEnum.DEFAULT);
-        Dish secondCourse2 = new SecondCourses("Granny's cutlet", "Lots of love", 5.00, FoodPreferencesEnum.DEFAULT);
-        Dish secondCourse3 = new SecondCourses("Meat stew", "Secret ingredients", 8.00, FoodPreferencesEnum.DEFAULT);
+        Dish secondCourse1 = new SecondCourses("Florentine steak", "Italian meat I.G.P.", 50.00, FoodPreferencesEnum.FULL_MENU);
+        Dish secondCourse2 = new SecondCourses("Granny's cutlet", "Lots of love", 5.00, FoodPreferencesEnum.FULL_MENU);
+        Dish secondCourse3 = new SecondCourses("Meat stew", "Secret ingredients", 8.00, FoodPreferencesEnum.FULL_MENU);
 
         Course secondCoursesList = new Course();
         secondCoursesList.addDish(secondCourse1);
@@ -79,14 +73,14 @@ public class Start {
 
 
         //Restaurant restaurant = new Restaurant(5);
-        Customer pippo = new Customer("Pippo" , FoodPreferencesEnum.VEGETARIAN);
-        Customer pluto = new Customer("Pluto" , FoodPreferencesEnum.DEFAULT);
+        Customer pippo = new Customer("Pippo" , FoodPreferencesEnum.FULL_MENU);
+        Customer pluto = new Customer("Pluto" , FoodPreferencesEnum.FULL_MENU);
         Customer paperino = new Customer("Paperino" , FoodPreferencesEnum.VEGAN);
-        Customer micky = new Customer("Micky" , FoodPreferencesEnum.DEFAULT);
-        Customer minnie = new Customer("Minnie" , FoodPreferencesEnum.DEFAULT);
-        Customer daisy = new Customer("Daisy" , FoodPreferencesEnum.DEFAULT);
+        Customer micky = new Customer("Micky" , FoodPreferencesEnum.FULL_MENU);
+        Customer minnie = new Customer("Minnie" , FoodPreferencesEnum.FULL_MENU);
+        Customer daisy = new Customer("Daisy" , FoodPreferencesEnum.FULL_MENU);
 
-        List<Table> tableList = new ArrayList<>();
+        /*List<Table> tableList = new ArrayList<>();
         tableList.add(new Table(1,4));
         tableList.add(new Table(2,2));
         tableList.add(new Table(3,6));
@@ -104,8 +98,8 @@ public class Start {
         restaurant.emptyTable("Paperino");
         restaurant.emptyTable("Pippo");
 
-        restaurant.printRestaurant();
+        restaurant.printRestaurant();*/
 
-        menu.printMenu(pippo);
+        menu.printPreferencedMenu(pippo);
     }
 }

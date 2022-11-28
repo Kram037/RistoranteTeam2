@@ -8,7 +8,7 @@ public enum FoodPreferencesEnum {
     /**
      * Default food preferences enum.
      */
-    DEFAULT,
+    FULL_MENU,
     /**
      * Vegetarian food preferences enum.
      */

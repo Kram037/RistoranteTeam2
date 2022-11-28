@@ -1,7 +1,9 @@
 package entities;
 
 import customer.Customer;
+import enumerations.FoodPreferencesEnum;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,17 +29,33 @@ public class Course {
     /**
      * Print the lists of a single course.
      */
-    public void printCourse(Customer customer){
+    public void printCourse(){
 
-        System.out.println("\nMenu " + dishList.get(0).getClass().getSimpleName());
+        System.out.println("\n" + dishList.get(0).getClass().getSimpleName());
 
             for (Dish dish : dishList) {
-                //TODO hai rotto con questo ordinal te l'ho già detto a te e vittoria
-                //non si fa mai in 10 anni non l'ho mai usato
-                if(dish.getPreference() >= customer.getFoodPreference()) {
+                    dish.printDish();
+            }
+
+    }
+
+    public void printPreferencedCourse(Customer customer){
+
+        System.out.println("\n" + dishList.get(0).getClass().getSimpleName());
+
+        if(customer.getFoodPreference() == FoodPreferencesEnum.VEGAN) {
+            for (Dish dish : dishList) {
+                if(dish.getPreference() == FoodPreferencesEnum.VEGAN){
                     dish.printDish();
                 }
             }
+        } else if(customer.getFoodPreference() == FoodPreferencesEnum.VEGETARIAN) {
+            for (Dish dish : dishList) {
+                if(dish.getPreference() == FoodPreferencesEnum.VEGAN || dish.getPreference() == FoodPreferencesEnum.VEGETARIAN){
+                    dish.printDish();
+                }
+            }
+        }
 
     }
 }
