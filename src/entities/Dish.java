@@ -87,7 +87,6 @@ public class Dish{
   public void printDish(){
     System.out.println("Name: " + name
             + " - Ingredients: " + ingredients
-            + " - Price : " + price
-            + " - Preference : " + preference);
+            + " - Price : " + price);
   }
 }
