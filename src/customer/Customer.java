@@ -26,7 +26,7 @@ public class Customer {
         this.foodPreference = foodPreference;
     }
 
-    public String getCustomerName() {
+    /*public String getCustomerName() {
         return "string";
-    }
+    }*/
 }
