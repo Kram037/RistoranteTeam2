@@ -13,7 +13,11 @@ import java.util.Map;
  * The Restaurant class
  */
 public class Restaurant {
+    //TODO no final
     private final Map<Table, Reservation> tableMap = new HashMap<>();
+
+    //TODO inserire tutti i field che servono per creare un ristorante
+    private String nomeRistorante;
 
     /**
      * Instantiates a new Restaurant
@@ -22,6 +26,8 @@ public class Restaurant {
      * @param tableList the table list of the restaurant
      */
     public Restaurant(List<Table> tableList){
+        // TODO rivedere
+
         for(Table table : tableList){
             tableMap.put(table,null);
         }
@@ -41,8 +47,8 @@ public class Restaurant {
      * @return the table reserved in case of available tables with enough seats
      *         null in case of no available tables or tables with not enough seats
      */
-    public Table reserveTable(String reservationName, int requiredSeats, LocalDate date, LocalTime time){
-
+    public void reserveTable(Table table, LocalDate date, LocalTime time){
+/*
         for(Map.Entry<Table, Reservation> entry : tableMap.entrySet()){
             if (entry.getKey().getTableStatus() == TableStatusEnum.AVAILABLE
                     && entry.getKey().getTableSeats() >= requiredSeats){
@@ -52,7 +58,14 @@ public class Restaurant {
             }
         }
         System.out.println("No available table for " + reservationName);
+        //TODO non dobbiamo mai far tornare null ai metodi
+
         return null;
+
+ */
+        // TODO questo metodo ci prenota un tavolo e stampa lo stato attuale
+        // if (table è libero
+
     }
 
     /**

@@ -8,8 +8,11 @@ import java.time.format.DateTimeFormatter;
  * @author Alina Mustata
  * The Reservation class
  */
-class Reservation {
+public class Reservation {
+
+
     private final int requiredSeats;
+    //TODO no final
     private final String reservationName;
     private final LocalDate date;
     private final LocalTime time;
@@ -44,6 +47,7 @@ class Reservation {
      * @return the required seats for the reservation
      */
     public int getRequiredSeats() {
+        //TODO usiamo sempre gli Integer
         return requiredSeats;
     }
 
@@ -67,6 +71,7 @@ class Reservation {
 
     @Override
     public String toString(){
+        //TODO to string non serve per stampare dettagli ma per stampare ad esempio 1234445@hascode
         return "Reservation: " + this.reservationName
                 + " Day: "
                 + this.date.format(DateTimeFormatter.ofPattern("dd/MM"))

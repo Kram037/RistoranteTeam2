@@ -3,6 +3,9 @@ package restaurant;
 import customer.Customer;
 import enumerations.TableStatusEnum;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +17,8 @@ public class Table {
     private final int tableId;
     private final int tableSeats;
     private TableStatusEnum tableStatus;
+
+    private  LocalDateTime dataAntTimeReservation;
 
     /**
      * Instantiates a new Table
@@ -63,9 +68,21 @@ public class Table {
         this.tableStatus = tableStatus;
     }
 
+    public LocalDateTime getDataAntTimeReservation() {
+        return dataAntTimeReservation;
+    }
 
     @Override
     public String toString() {
         return "Table " + tableId + ", size: " + tableSeats + " seats";
+    }
+
+
+    public boolean isTableFree(Table table, LocalDateTime localDateTime) {
+        if (table.tableStatus == TableStatusEnum.AVAILABLE && table.getDataAntTimeReservation().equals(localDateTime)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
