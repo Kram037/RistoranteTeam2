@@ -32,7 +32,7 @@ public class Course {
         System.out.println("\nMenu " + dishList.get(0).getClass().getSimpleName());
 
             for (Dish dish : dishList) {
-                if(dish.getPreference().ordinal() >= customer.foodPreference.ordinal()) {
+                if(dish.getPreference().ordinal() >= customer.getFoodPreference().ordinal()) {
                     dish.printDish();
                 }
             }

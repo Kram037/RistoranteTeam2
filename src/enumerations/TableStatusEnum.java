@@ -9,9 +9,9 @@ public enum TableStatusEnum {
      */
     AVAILABLE,
     /**
-     * Occupaid table status enum.
+     * Occupied table status enum.
      */
-    OCCUPAID,
+    OCCUPIED,
     /**
      * Reserved table status enum.
      */
