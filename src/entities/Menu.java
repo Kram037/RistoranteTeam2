@@ -30,11 +30,11 @@ public class Menu {
     /**
      * Add all the dishes lists to the courseList.
      *
-     * @param courseList the list of the dishes.
+     * @DEPRECATED @param courseList the list of the dishes.    //fix param in javadoc, see the method below.
+     * (remove@DEPRECATED)
      */
-    public void addDishMenu(Course courseList){
-        //TODO sistemare
-        Menu.courseList.add(courseList);
+    public void addDishMenu(Course course){
+        courseList.add(course);
     }
 
     /**
