@@ -2,11 +2,10 @@
 import customer.Customer;
 import entities.*;
 import enumerations.FoodPreferencesEnum;
-import restaurant1.Restaurant;
-import restaurant1.Table;
-import restaurant2.Restaurant2;
-import restaurant2.Table2;
-
+import restaurant.Restaurant;
+import restaurant.Table;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,52 +78,33 @@ public class Start {
         menu.addDishMenu(dessertsList);
 
 
-
-
-
         //Restaurant restaurant = new Restaurant(5);
         Customer pippo = new Customer("Pippo" , FoodPreferencesEnum.VEGETARIAN);
-        //Customer pluto = new Customer("Pluto" , FoodPreferencesEnum.DEFAULT);
-        //Customer paperino = new Customer("Paperino" , FoodPreferencesEnum.DEFAULT);
-        //Customer micky = new Customer("Micky" , FoodPreferencesEnum.DEFAULT);
-        //Customer minnie = new Customer("Minnie" , FoodPreferencesEnum.DEFAULT);
-        //Customer daisy = new Customer("Daisy" , FoodPreferencesEnum.DEFAULT);
+        Customer pluto = new Customer("Pluto" , FoodPreferencesEnum.DEFAULT);
+        Customer paperino = new Customer("Paperino" , FoodPreferencesEnum.VEGAN);
+        Customer micky = new Customer("Micky" , FoodPreferencesEnum.DEFAULT);
+        Customer minnie = new Customer("Minnie" , FoodPreferencesEnum.DEFAULT);
+        Customer daisy = new Customer("Daisy" , FoodPreferencesEnum.DEFAULT);
 
-        //restaurant.reserveTable(pippo);
-        //restaurant.reserveTable(pluto);
-        //restaurant.reserveTable(paperino);
-        //restaurant.reserveTable(micky);
-        //restaurant.reserveTable(minnie);
-        //restaurant.reserveTable(daisy);
+        List<Table> tableList = new ArrayList<>();
+        tableList.add(new Table(1,4));
+        tableList.add(new Table(2,2));
+        tableList.add(new Table(3,6));
+        tableList.add(new Table(4,6));
 
+        Restaurant restaurant = new Restaurant(tableList);
 
-        //restaurant.printRestaurant();
-        //restaurant.emptyTable(pippo);
-        //restaurant.printRestaurant();
+        restaurant.reserveTable("Pippo", 4,
+                LocalDate.of(2022,12,01), LocalTime.of(20,00));
+        restaurant.reserveTable("Pluto", 2,
+                LocalDate.of(2022,11,30), LocalTime.of(20,00));
+        restaurant.reserveTable("Paperino", 8,
+                LocalDate.of(2022,12,01), LocalTime.of(20,00));
 
-        //restaurant.reserveTable(daisy);
-        //restaurant.printRestaurant();
+        restaurant.emptyTable("Paperino");
+        restaurant.emptyTable("Pippo");
 
-
-        //Customer pippo = new Customer("Pippo" , FoodPreferencesEnum.DEFAULT);
-        //Customer pluto = new Customer("Pluto" , FoodPreferencesEnum.DEFAULT);
-        //Customer paperino = new Customer("Paperino" , FoodPreferencesEnum.DEFAULT);
-        //Customer micky = new Customer("Micky" , FoodPreferencesEnum.DEFAULT);
-        //Customer minnie = new Customer("Minnie" , FoodPreferencesEnum.DEFAULT);
-
-        //List<Table2> tableList = new ArrayList<>();
-        //tableList.add(new Table2(1,4));
-        //tableList.add(new Table2(2,2));
-        //tableList.add(new Table2(3,6));
-        //tableList.add(new Table2(4,8));
-
-        //Restaurant2 restaurant2 = new Restaurant2(tableList);
-        //restaurant2.reserveTable(pippo, 10);
-        //restaurant2.reserveTable(pluto, 2);
-        //restaurant2.reserveTable(paperino, 4);
-
-        //restaurant2.emptyTable(minnie);
-        //restaurant2.printRestaurant();
+        restaurant.printRestaurant();
 
         menu.printMenu(pippo);
     }
