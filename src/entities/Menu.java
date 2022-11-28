@@ -1,6 +1,5 @@
 package entities;
 import customer.Customer;
-import enumerations.FoodPreferencesEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +43,7 @@ public class Menu {
         System.out.println(restaurantName);
 
         for(Course dishMenu : courseList){
-            dishMenu.printDishMenu(customer);
+            dishMenu.printCourse(customer);
         }
 
     }

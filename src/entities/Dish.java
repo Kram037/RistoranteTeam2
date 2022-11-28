@@ -84,7 +84,7 @@ public class Dish{
   /**
    * Print the details of the dish.
    */
-  public void printCourse(){
+  public void printDish(){
     System.out.println("Name: " + name
             + " - Ingredients: " + ingredients
             + " - Price : " + price);

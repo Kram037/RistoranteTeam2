@@ -27,13 +27,13 @@ public class Course {
     /**
      * Print the lists of a single course.
      */
-    public void printDishMenu(Customer customer){
+    public void printCourse(Customer customer){
 
         System.out.println("\nMenu " + dishList.get(0).getClass().getSimpleName());
 
             for (Dish dish : dishList) {
                 if(dish.getPreference().ordinal() >= customer.foodPreference.ordinal()) {
-                    dish.printCourse();
+                    dish.printDish();
                 }
             }
 
