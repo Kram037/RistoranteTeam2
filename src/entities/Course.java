@@ -1,7 +1,6 @@
 package entities;
 
 import customer.Customer;
-import enumerations.FoodPreferencesEnum;
 
 import java.util.ArrayList;
 import java.util.List;
