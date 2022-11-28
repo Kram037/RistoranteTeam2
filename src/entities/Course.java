@@ -33,7 +33,7 @@ public class Course {
 
             for (Dish dish : dishList) {
                 if(dish.getPreference().ordinal() >= customer.foodPreference.ordinal()) {
-                    dish.printDish();
+                    dish.printCourse();
                 }
             }
 
