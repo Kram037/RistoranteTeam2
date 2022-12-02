@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class Restaurant {
     //TODO no final
-    private final Map<Table, Reservation> tableMap = new HashMap<>();
+    private  Map<Table, Reservation> tableMap = new HashMap<>();
 
     //TODO inserire tutti i field che servono per creare un ristorante
     private String nomeRistorante;
@@ -40,8 +40,7 @@ public class Restaurant {
      * If this is true then creates a new Reservation with the input parameters, the map value reservation is
      * set as the new reservation and the status of the table is set to Reserved
      *
-     * @param reservationName the reservation name
-     * @param requiredSeats   the required seats
+     * @param table           the table
      * @param date            the date
      * @param time            the time
      * @return the table reserved in case of available tables with enough seats
