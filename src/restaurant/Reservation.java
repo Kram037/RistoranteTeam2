@@ -11,11 +11,16 @@ import java.time.format.DateTimeFormatter;
 public class Reservation {
 
 
-    private  Integer requiredSeats;
+    private final int requiredSeats;
+    //TODO no final
+    private final String reservationName;
+    private LocalDate date;
+    private LocalTime time;
 
-    private  String reservationName;
-    private  LocalDate date;
-    private  LocalTime time;
+    public Reservation(String reservationName,int requiredSeats){
+        this.requiredSeats = requiredSeats;
+        this.reservationName = reservationName;
+    }
 
     /**
      * Instantiates a new Reservation
@@ -46,8 +51,8 @@ public class Reservation {
      *
      * @return the required seats for the reservation
      */
-    public Integer getRequiredSeats() {
-
+    public int getRequiredSeats() {
+        //TODO usiamo sempre gli Integer
         return requiredSeats;
     }
 
@@ -69,16 +74,19 @@ public class Reservation {
         return time;
     }
 
-    /**
-     * Print info reservetion
-     * @return the name of reservertion, the date (Day, Month) of reservetion, the date (Hour, Minutes)
-     */
-    public String infoReservation(){
 
+    /*@Override
+    public String toString(){
+        //TODO to string non serve per stampare dettagli ma per stampare ad esempio 1234445@hascode
         return "Reservation: " + this.reservationName
                 + " Day: "
                 + this.date.format(DateTimeFormatter.ofPattern("dd/MM"))
                 + " Time: "
                 + this.time.format(DateTimeFormatter.ofPattern("HH:mm"));
+    }
+     */
+
+    public String getDetails(){
+        return "Reservation name: "+ reservationName + "seats "+ requiredSeats;
     }
 }
