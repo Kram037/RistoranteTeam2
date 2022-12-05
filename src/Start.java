@@ -2,6 +2,8 @@
 import customer.Customer;
 import entities.*;
 import enumerations.FoodPreferencesEnum;
+import it.buisness.Bill;
+import restaurant.Reservation;
 
 /**
  * The type Start.
@@ -101,5 +103,17 @@ public class Start {
         restaurant.printRestaurant();*/
 
         menu.printPreferencedMenu(pippo);
+
+        Reservation reservation1 = new Reservation("reservation1",5);
+
+        Bill bill1 = new Bill(reservation1);
+        bill1.addDishAToTheBill(secondCourse1);
+        bill1.addDishAToTheBill(secondCourse3);
+        bill1.addDishAToTheBill(secondCourse2);
+        bill1.addDishAToTheBill(appetizer1);
+        bill1.addDishAToTheBill(drink1);
+
+        bill1.printTheBill();
+
     }
 }

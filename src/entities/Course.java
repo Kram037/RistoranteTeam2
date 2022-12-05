@@ -3,7 +3,6 @@ package entities;
 import customer.Customer;
 import enumerations.FoodPreferencesEnum;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,11 +33,15 @@ public class Course {
         System.out.println("\n" + dishList.get(0).getClass().getSimpleName());
 
             for (Dish dish : dishList) {
-                    dish.printDish();
+                    dish.PrintInfoDish();
             }
 
     }
 
+    /**
+     * Prints every course according to customer preference
+     * @param customer the customer to obtain his preference
+     */
     public void printPreferencedCourse(Customer customer){
 
         System.out.println("\n" + dishList.get(0).getClass().getSimpleName());
@@ -46,13 +49,13 @@ public class Course {
         if(customer.getFoodPreference() == FoodPreferencesEnum.VEGAN) {
             for (Dish dish : dishList) {
                 if(dish.getPreference() == FoodPreferencesEnum.VEGAN){
-                    dish.printDish();
+                    dish.PrintInfoDish();
                 }
             }
         } else if(customer.getFoodPreference() == FoodPreferencesEnum.VEGETARIAN) {
             for (Dish dish : dishList) {
                 if(dish.getPreference() == FoodPreferencesEnum.VEGAN || dish.getPreference() == FoodPreferencesEnum.VEGETARIAN){
-                    dish.printDish();
+                    dish.PrintInfoDish();
                 }
             }
         }

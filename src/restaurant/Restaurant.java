@@ -40,8 +40,8 @@ public class Restaurant {
      * If this is true then creates a new Reservation with the input parameters, the map value reservation is
      * set as the new reservation and the status of the table is set to Reserved
      *
-     * @param reservationName the reservation name
-     * @param requiredSeats   the required seats
+     //* @param reservationName the reservation name
+     //* @param requiredSeats   the required seats
      * @param date            the date
      * @param time            the time
      * @return the table reserved in case of available tables with enough seats
@@ -104,4 +104,6 @@ public class Restaurant {
             }
         });
     }
+
+
 }

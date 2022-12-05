@@ -36,6 +36,13 @@ public class Customer {
     }
 
     /**
+     * Print info customer.
+     */
+    public void infoCustomer(){
+        System.out.println("Customer name: " + customerName + " Food preference " + foodPreference);
+    }
+
+    /**
      * toString method to print the customer object details
      * @return the string values of the variables in the Customer object
      */
@@ -46,4 +53,6 @@ public class Customer {
                 ", foodPreference=" + foodPreference +
                 '}';
     }
+
+
 }

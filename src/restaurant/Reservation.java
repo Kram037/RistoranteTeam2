@@ -14,8 +14,13 @@ public class Reservation {
     private final int requiredSeats;
     //TODO no final
     private final String reservationName;
-    private final LocalDate date;
-    private final LocalTime time;
+    private LocalDate date;
+    private LocalTime time;
+
+    public Reservation(String reservationName,int requiredSeats){
+        this.requiredSeats = requiredSeats;
+        this.reservationName = reservationName;
+    }
 
     /**
      * Instantiates a new Reservation
@@ -69,7 +74,8 @@ public class Reservation {
         return time;
     }
 
-    @Override
+
+    /*@Override
     public String toString(){
         //TODO to string non serve per stampare dettagli ma per stampare ad esempio 1234445@hascode
         return "Reservation: " + this.reservationName
@@ -77,5 +83,10 @@ public class Reservation {
                 + this.date.format(DateTimeFormatter.ofPattern("dd/MM"))
                 + " Time: "
                 + this.time.format(DateTimeFormatter.ofPattern("HH:mm"));
+    }
+     */
+
+    public String getDetails(){
+        return "Reservation name: "+ reservationName + "seats "+ requiredSeats;
     }
 }

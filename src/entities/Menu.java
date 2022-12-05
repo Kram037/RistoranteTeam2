@@ -28,10 +28,8 @@ public class Menu {
     }
 
     /**
-     * Add all the dishes lists to the courseList.
-     *
-     * @DEPRECATED @param courseList the list of the dishes.    //fix param in javadoc, see the method below.
-     * (remove@DEPRECATED)
+     * add an entire course to the courseList
+     * @param course courseList
      */
     public void addDishMenu(Course course){
         courseList.add(course);
@@ -49,6 +47,10 @@ public class Menu {
         }
     }
 
+    /**
+     * Print the menu according to the type of customer
+     * @param customer the customer to obtain his preference
+     */
     public void printPreferencedMenu(Customer customer) {
 
         if (customer.getFoodPreference() == FoodPreferencesEnum.FULL_MENU) {
