@@ -73,7 +73,7 @@ public class Start {
 
 
         //Restaurant restaurant = new Restaurant(5);
-        Customer pippo = new Customer("Pippo" , FoodPreferencesEnum.FULL_MENU);
+        Customer pippo = new Customer("Pippo" , FoodPreferencesEnum.VEGETARIAN);
         Customer pluto = new Customer("Pluto" , FoodPreferencesEnum.FULL_MENU);
         Customer paperino = new Customer("Paperino" , FoodPreferencesEnum.VEGAN);
         Customer micky = new Customer("Micky" , FoodPreferencesEnum.FULL_MENU);
