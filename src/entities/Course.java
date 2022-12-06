@@ -14,7 +14,15 @@ public class Course {
     /**
      * The Dish list that contains all the dishes.
      */
-    public List<Dish> dishList = new ArrayList<>();
+    private List<Dish> dishList = new ArrayList<>();
+
+    public List<Dish> getDishList() {
+        return dishList;
+    }
+
+    public void setDishList(List<Dish> dishList) {
+        this.dishList = dishList;
+    }
 
     /**
      * Add dish to the dish list.

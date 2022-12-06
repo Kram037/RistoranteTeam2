@@ -6,8 +6,8 @@ import enumerations.FoodPreferencesEnum;
  */
 public class Customer {
 
-    private final String customerName;
-    private final FoodPreferencesEnum foodPreference;
+    private  String customerName;
+    private  FoodPreferencesEnum foodPreference;
 
     /**
      * Instantiates a new Customer

@@ -11,9 +11,9 @@ import java.time.format.DateTimeFormatter;
 public class Reservation {
 
 
-    private final int requiredSeats;
-    //TODO no final
-    private final String reservationName;
+    private Integer requiredSeats;
+
+    private  String reservationName;
     private LocalDate date;
     private LocalTime time;
 
@@ -51,8 +51,8 @@ public class Reservation {
      *
      * @return the required seats for the reservation
      */
-    public int getRequiredSeats() {
-        //TODO usiamo sempre gli Integer
+    public Integer getRequiredSeats() {
+
         return requiredSeats;
     }
 
@@ -85,6 +85,14 @@ public class Reservation {
                 + this.time.format(DateTimeFormatter.ofPattern("HH:mm"));
     }
      */
+
+    public String infoReservation(){
+        return "Reservation: " + this.reservationName
+                + " Day: "
+                + this.date.format(DateTimeFormatter.ofPattern("dd/MM"))
+                + " Time: "
+                + this.time.format(DateTimeFormatter.ofPattern("HH:mm"));
+    }
 
     public String getDetails(){
         return "Reservation name: "+ reservationName + "seats "+ requiredSeats;
