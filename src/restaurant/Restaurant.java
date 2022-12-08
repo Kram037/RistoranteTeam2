@@ -13,8 +13,8 @@ import java.util.Map;
  * The Restaurant class
  */
 public class Restaurant {
-    //TODO no final
-    private final Map<Table, Reservation> tableMap = new HashMap<>();
+
+    private  Map<Table, Reservation> tableMap = new HashMap<>();
 
     //TODO inserire tutti i field che servono per creare un ristorante
     private String nomeRistorante;
