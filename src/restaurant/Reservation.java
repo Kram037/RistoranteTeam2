@@ -1,7 +1,7 @@
 package restaurant;
 public class Reservation {
     private final String nominal;
-    private int requiredSeats;
+    private Integer requiredSeats;
 
 
     /**
@@ -30,7 +30,7 @@ public class Reservation {
      *
      * @return the required seats
      */
-    public int getRequiredSeats() {
+    public Integer getRequiredSeats() {
         return requiredSeats;
     }
 
