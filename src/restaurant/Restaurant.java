@@ -2,108 +2,82 @@ package restaurant;
 
 import enumerations.TableStatusEnum;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
- * @author Alina Mustata
- * The Restaurant class
+ * The class Restaurant.
  */
 public class Restaurant {
 
-    private  Map<Table, Reservation> tableMap = new HashMap<>();
+    private static Restaurant restaurant = new Restaurant();
+    private Map<Table, Reservation> myRestaurant = new HashMap<>();
 
-    //TODO inserire tutti i field che servono per creare un ristorante
-    private String nomeRistorante;
+    private Restaurant() {
+    }
 
     /**
-     * Instantiates a new Restaurant
-     * Assigns the tables from the tableList to the key of the tableMap
+     * Gets instance of the restaurant singleton.
      *
-     * @param tableList the table list of the restaurant
+     * @return the instance
      */
-    public Restaurant(List<Table> tableList){
-        // TODO rivedere
+    public static Restaurant getInstance() {
+        return restaurant;
+    }
 
-        for(Table table : tableList){
-            tableMap.put(table,null);
+    /**
+     * Gets my restaurant map.
+     *
+     * @return the restaurant
+     */
+    public Map<Table, Reservation> getMyRestaurant() {
+        return myRestaurant;
+    }
+
+    /**
+     * A method to reserve tables that checks the table state and the table available seats
+     * adds table and reservation to the restaurant map
+     * modifies the table state and available seats
+     *
+     * @param table       the table
+     * @param reservation the reservation
+     */
+    public void reserveTable(Table table, Reservation reservation){
+        if(table.getTableState() == TableStatusEnum.OCCUPIED){
+            System.out.println("Error : the requested table is already occupied by other customers");
+        } else if(( table.getInitialSeats() >= reservation.getRequiredSeats() )){
+            myRestaurant.put(table,reservation);
+            table.reserveTable(reservation.getRequiredSeats());
+            System.out.println("è stato riservato");
+        } else {
+            System.out.println("There aren't enough available seats for this reservation");
         }
     }
 
     /**
-     * Reserves a table
-     * Iterates the map tableMap : key is the Table object, value is the Reservation object
-     * Checks if the table status is Available and the table number of seats is greater than the required seats
-     * If this is true then creates a new Reservation with the input parameters, the map value reservation is
-     * set as the new reservation and the status of the table is set to Reserved
-     *
-     //* @param reservationName the reservation name
-     //* @param requiredSeats   the required seats
-     * @param date            the date
-     * @param time            the time
-     * @return the table reserved in case of available tables with enough seats
-     *         null in case of no available tables or tables with not enough seats
+     * A method to clean tables that checks the table state
+     * removes table and reservation from the restaurant map
+     * modifies the table state
+     * @param table       the table
+     * @param reservation the reservation
+     * @return the reservation
      */
-    public void reserveTable(Table table, LocalDate date, LocalTime time){
-/*
-        for(Map.Entry<Table, Reservation> entry : tableMap.entrySet()){
-            if (entry.getKey().getTableStatus() == TableStatusEnum.AVAILABLE
-                    && entry.getKey().getTableSeats() >= requiredSeats){
-                entry.setValue(new Reservation(reservationName, requiredSeats, date, time));
-                entry.getKey().setTableStatus(TableStatusEnum.RESERVED);
-                return entry.getKey();
-            }
+    public void cleanTable(Table table, Reservation reservation) {
+        if (table.getTableState() == TableStatusEnum.AVAILABLE) {
+            System.out.println("Error : the requested table had already been freed and cleaned");
         }
-        System.out.println("No available table for " + reservationName);
-        //TODO non dobbiamo mai far tornare null ai metodi
-
-        return null;
-
- */
-        // TODO questo metodo ci prenota un tavolo e stampa lo stato attuale
-        // if (table è libero
-
+        else {
+            myRestaurant.remove(table, reservation);
+            table.freeTable();
+        }
     }
 
     /**
-     * Empty table
-     * Iterates the map tableMap : key is the Table object, value is the Reservation object
-     * Checks if the input parameter reservationName exists and is assigned to a table,
-     * then sets the map value (reservation) to null and the table status to Available
-     * If there is no reservation with that name prints the message :
-     *  reservationName is not dinning in this restaurant!
-     *
-     * @param reservationName the reservation name
+     * Iterates through the restaurant map and prints the details of the table, reservation and customers.
      */
-    public void emptyTable(String reservationName) {
-        for (Map.Entry<Table, Reservation> entry : tableMap.entrySet()) {
-            if (entry.getValue() != null && reservationName.equals(entry.getValue().getReservationName())) {
-                entry.setValue(null);
-                entry.getKey().setTableStatus(TableStatusEnum.AVAILABLE);
-                return;
-            }
-        }
-        System.out.println(reservationName + " is not dinning in this restaurant!");
+    public void printRestaurantInfo() {
+        restaurant.getMyRestaurant().forEach((table, reservation) -> System.out.println(table.getName() +
+                " is " + table.getTableState().toString().toLowerCase() +
+                " by reservation : " + reservation.getReservationInfo()));
     }
-
-    /**
-     * Prints the restaurant details : list of tables with reservation details
-     * key = Table object, value = Reservation object
-     * If the table has no reservation it prints "Available" instead of the reservation details
-     */
-    public void printRestaurant(){
-        System.out.println("--------------");
-        tableMap.forEach((key,value)-> {
-            if(value == null){
-                System.out.println(key + " *** " + "Available");
-            }else {
-                System.out.println(key + " *** " + value);
-            }
-        });
-    }
-
-
 }

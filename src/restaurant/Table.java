@@ -1,88 +1,90 @@
 package restaurant;
-
-import customer.Customer;
 import enumerations.TableStatusEnum;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * @author Alina Mustata
- * The Table class
+ * The class Table.
  */
 public class Table {
-    private final int tableId;
-    private final int tableSeats;
-    private TableStatusEnum tableStatus;
-
-    private  LocalDateTime dataAntTimeReservation;
-
-    /**
-     * Instantiates a new Table
-     *
-     * @param tableId    the table id
-     * @param tableSeats the table number of seats(2,4,6,8...)
-     */
-    public Table(int tableId, int tableSeats){
-        this.tableId = tableId;
-        this.tableSeats = tableSeats;
-        this.tableStatus = TableStatusEnum.AVAILABLE;
-    }
+    private String name;
+    private int initialSeats;
+    private int availableSeats;
+    private TableStatusEnum tableState;
 
     /**
-     * Gets table id
+     * Instantiates a new Table.
      *
-     * @return the table id
+     * @param name  the name
+     * @param initialSeats the seats
      */
-    public int getTableId() {
-        return tableId;
+    public Table(String name,int initialSeats) {
+        this.name = name;
+        this.initialSeats = initialSeats;
+        this.availableSeats = initialSeats;
+        this.tableState = TableStatusEnum.AVAILABLE;
     }
 
     /**
-     * Gets table number of seats
+     * Gets name.
      *
-     * @return the table seats
+     * @return the name
      */
-    public int getTableSeats() {
-        return tableSeats;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Gets table status
+     * Sets name.
      *
-     * @return the table status(Available, Occupied, Reserved)
+     * @param name the name
      */
-    public TableStatusEnum getTableStatus() {
-        return tableStatus;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
-     * Sets table status(Available, Occupied, Reserved)
+     * Gets seats.
      *
-     * @param tableStatus the table status
+     * @return the seats
      */
-    public void setTableStatus(TableStatusEnum tableStatus) {
-        this.tableStatus = tableStatus;
+    public int getInitialSeats() {
+        return initialSeats;
     }
 
-    public LocalDateTime getDataAntTimeReservation() {
-        return dataAntTimeReservation;
+    /**
+     * Gets available seats.
+     *
+     * @return the available seats
+     */
+    public int getAvailableSeats() {
+        return availableSeats;
     }
 
-    @Override
-    public String toString() {
-        return "Table " + tableId + ", size: " + tableSeats + " seats";
+    /**
+     * Gets table state.
+     *
+     * @return the table state
+     */
+    public TableStatusEnum getTableState() {
+        return tableState;
     }
 
-
-    public boolean isTableFree(Table table, LocalDateTime localDateTime) {
-        if (table.tableStatus == TableStatusEnum.AVAILABLE && table.getDataAntTimeReservation().equals(localDateTime)) {
-            return true;
-        } else {
-            return false;
-        }
+    /**
+     * method to free tables that changes table state to free and resets the available seats.
+     */
+    //TODO spostare logica nel restaurant
+    public void freeTable(){
+        this.tableState = TableStatusEnum.AVAILABLE;
+        this.availableSeats = this.initialSeats;
     }
+
+    /**
+     * method to reserve tables that calculates available seats and sets the table state to occupied.
+     * @param requiredSeats the required seats
+     */
+    //TODO sistemare il bug
+    public void reserveTable(int requiredSeats){
+        this.availableSeats = initialSeats - requiredSeats;
+        this.tableState = TableStatusEnum.OCCUPIED;
+    }
+
 }
