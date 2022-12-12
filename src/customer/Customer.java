@@ -6,8 +6,8 @@ import enumerations.FoodPreferencesEnum;
  */
 public class Customer {
 
-    private final String customerName;
-    private final FoodPreferencesEnum foodPreference;
+    private  String customerName;
+    private  FoodPreferencesEnum foodPreference;
 
     /**
      * Instantiates a new Customer
@@ -39,7 +39,7 @@ public class Customer {
      * Print info customer.
      */
     public void infoCustomer(){
-        System.out.println("Customer name: " + customerName + " Food preference " + foodPreference);
+        System.out.println("Customer name: " + customerName + " Food preference: " + foodPreference);
     }
 
     /**
