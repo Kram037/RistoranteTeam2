@@ -1,8 +1,8 @@
 package restaurant;
 public class Reservation {
-    private String nominal;
-    private int requiredSeats;
 
+    private String nominal;
+    private Integer requiredSeats;
 
     /**
      * Instantiates a new Reservation with an already created customer list
@@ -30,7 +30,7 @@ public class Reservation {
      *
      * @return the required seats
      */
-    public int getRequiredSeats() {
+    public Integer getRequiredSeats() {
         return requiredSeats;
     }
 

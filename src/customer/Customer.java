@@ -39,7 +39,7 @@ public class Customer {
      * Print info customer.
      */
     public void infoCustomer(){
-        System.out.println("Customer name: " + customerName + " Food preference " + foodPreference);
+        System.out.println("Customer name: " + customerName + " Food preference: " + foodPreference);
     }
 
     /**
