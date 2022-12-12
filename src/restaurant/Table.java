@@ -68,6 +68,10 @@ public class Table {
         return tableState;
     }
 
+    public String getDetails(){
+        return name+ " seats "+initialSeats+" avaible seats "+availableSeats+ " state: "+tableState;
+    }
+
     /**
      * method to free tables that changes table state to free and resets the available seats.
      */

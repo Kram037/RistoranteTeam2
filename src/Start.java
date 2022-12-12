@@ -4,6 +4,11 @@ import entities.*;
 import enumerations.FoodPreferencesEnum;
 import it.buisness.Bill;
 import restaurant.Reservation;
+import restaurant.Restaurant;
+import restaurant.Table;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The type Start.
@@ -101,12 +106,13 @@ public class Start {
         restaurant.emptyTable("Pippo");
 
         restaurant.printRestaurant();*/
+        Table table1 = new Table("Table 1",4);
 
         menu.printPreferencedMenu(pippo);
 
         Reservation reservation1 = new Reservation("reservation1",5);
 
-        Bill bill1 = new Bill(reservation1);
+        Bill bill1 = new Bill(table1);
         bill1.addDishAToTheBill(secondCourse1);
         bill1.addDishAToTheBill(secondCourse3);
         bill1.addDishAToTheBill(secondCourse2);

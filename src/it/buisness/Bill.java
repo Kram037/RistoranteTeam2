@@ -2,9 +2,11 @@ package it.buisness;
 
 import entities.Dish;
 import restaurant.Reservation;
+import restaurant.Table;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Class to make bills for customers
@@ -12,21 +14,25 @@ import java.util.List;
  * @author TonyF
  */
 public class Bill{
-    private Reservation reservation;
+    private Table table;
     List<Dish> dishesList;
     private double total;
 
     public Bill(){
     }
 
-    public Bill(Reservation reservation){
-        this.reservation = reservation;
+    public Bill(Table table){
+        this.table = table;
         this.total = 0;
         this.dishesList = new ArrayList<>(0);
     }
 
-    public Reservation getReservation(){
-        return reservation;
+    public Table getTable(){
+        return table;
+    }
+
+    public void setTable(Table table){
+        this.table = table;
     }
 
     public List<Dish> getDishesList(){
@@ -49,7 +55,7 @@ public class Bill{
      * Iterates the dishesList to print the name and the price of dish and sums the prices to give the total
      */
     public void printTheBill(){
-        System.out.println("The bill for the "+reservation+":");
+        System.out.println("The bill for the "+table.getName()+":");
         for (Dish single : dishesList){
             System.out.println(single.getName()+" "+single.getPrice()+" €");
             total += single.getPrice();
