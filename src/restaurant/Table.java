@@ -6,8 +6,8 @@ import enumerations.TableStatusEnum;
  */
 public class Table {
     private String name;
-    private int initialSeats;
-    private int availableSeats;
+    private Integer initialSeats;
+    private Integer availableSeats;
     private TableStatusEnum tableState;
 
     /**
@@ -46,7 +46,7 @@ public class Table {
      *
      * @return the seats
      */
-    public int getInitialSeats() {
+    public Integer getInitialSeats() {
         return initialSeats;
     }
 
@@ -55,7 +55,7 @@ public class Table {
      *
      * @return the available seats
      */
-    public int getAvailableSeats() {
+    public Integer getAvailableSeats() {
         return availableSeats;
     }
 
@@ -66,6 +66,10 @@ public class Table {
      */
     public TableStatusEnum getTableState() {
         return tableState;
+    }
+
+    public String getDetails(){
+        return name+ " seats "+initialSeats+" avaible seats "+availableSeats+ " state: "+tableState;
     }
 
     /**

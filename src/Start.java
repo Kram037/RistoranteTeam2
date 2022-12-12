@@ -1,9 +1,10 @@
-
 import customer.Customer;
 import entities.*;
 import enumerations.FoodPreferencesEnum;
 import it.buisness.Bill;
 import restaurant.Reservation;
+import restaurant.Table;
+
 
 /**
  * The type Start.
@@ -74,7 +75,7 @@ public class Start {
         menu.addDishMenu(dessertsList);
 
 
-        //Restaurant restaurant = new Restaurant(5);
+
         Customer pippo = new Customer("Pippo" , FoodPreferencesEnum.FULL_MENU);
         Customer pluto = new Customer("Pluto" , FoodPreferencesEnum.FULL_MENU);
         Customer paperino = new Customer("Paperino" , FoodPreferencesEnum.VEGAN);
@@ -82,31 +83,13 @@ public class Start {
         Customer minnie = new Customer("Minnie" , FoodPreferencesEnum.FULL_MENU);
         Customer daisy = new Customer("Daisy" , FoodPreferencesEnum.FULL_MENU);
 
-        /*List<Table> tableList = new ArrayList<>();
-        tableList.add(new Table(1,4));
-        tableList.add(new Table(2,2));
-        tableList.add(new Table(3,6));
-        tableList.add(new Table(4,6));
-
-        Restaurant restaurant = new Restaurant(tableList);
-
-        restaurant.reserveTable("Pippo", 4,
-                LocalDate.of(2022,12,01), LocalTime.of(20,00));
-        restaurant.reserveTable("Pluto", 2,
-                LocalDate.of(2022,11,30), LocalTime.of(20,00));
-        restaurant.reserveTable("Paperino", 8,
-                LocalDate.of(2022,12,01), LocalTime.of(20,00));
-
-        restaurant.emptyTable("Paperino");
-        restaurant.emptyTable("Pippo");
-
-        restaurant.printRestaurant();*/
+        Table table1 = new Table("Table 1",4);
 
         menu.printPreferencedMenu(pippo);
 
         Reservation reservation1 = new Reservation("reservation1",5);
 
-        Bill bill1 = new Bill(reservation1);
+        Bill bill1 = new Bill(table1);
         bill1.addDishAToTheBill(secondCourse1);
         bill1.addDishAToTheBill(secondCourse3);
         bill1.addDishAToTheBill(secondCourse2);
