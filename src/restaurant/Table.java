@@ -71,7 +71,7 @@ public class Table {
     /**
      * method to free tables that changes table state to free and resets the available seats.
      */
-    //TODO spostare logica nel restaurant
+
     public void freeTable(){
         this.tableState = TableStatusEnum.AVAILABLE;
         this.availableSeats = this.initialSeats;
@@ -81,7 +81,7 @@ public class Table {
      * method to reserve tables that calculates available seats and sets the table state to occupied.
      * @param requiredSeats the required seats
      */
-    //TODO sistemare il bug
+
     public void reserveTable(int requiredSeats){
         this.availableSeats = initialSeats - requiredSeats;
         this.tableState = TableStatusEnum.OCCUPIED;

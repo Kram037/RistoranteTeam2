@@ -1,6 +1,6 @@
 package restaurant;
 public class Reservation {
-    private final String nominal;
+    private String nominal;
     private int requiredSeats;
 
 
