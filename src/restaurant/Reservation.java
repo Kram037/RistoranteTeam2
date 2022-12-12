@@ -1,100 +1,54 @@
 package restaurant;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-
-/**
- * @author Alina Mustata
- * The Reservation class
- */
 public class Reservation {
-
-
+    private final String nominal;
     private Integer requiredSeats;
 
-    private  String reservationName;
-    private LocalDate date;
-    private LocalTime time;
-
-    public Reservation(String reservationName,int requiredSeats){
-        this.requiredSeats = requiredSeats;
-        this.reservationName = reservationName;
-    }
 
     /**
-     * Instantiates a new Reservation
+     * Instantiates a new Reservation with an already created customer list
      *
-     * @param reservationName the reservation name
-     * @param requiredSeats   the required seats
-     * @param date            the date
-     * @param time            the time
+     * @param nominal the reservation id
+     * @param requiredSeats  the required seats
      */
-    public Reservation(String reservationName, int requiredSeats, LocalDate date, LocalTime time) {
-        this.reservationName = reservationName;
+    public Reservation(String nominal, int requiredSeats) {
+        this.nominal = nominal;
         this.requiredSeats = requiredSeats;
-        this.date = date;
-        this.time = time;
     }
 
     /**
-     * Gets the reservation name
+     * Gets reservation id.
      *
-     * @return the reservation name
+     * @return the reservation id
      */
-    public String getReservationName() {
-        return reservationName;
+    public String getNominal() {
+        return nominal;
     }
 
+
     /**
-     * Gets the required seats of the reservation
+     * Gets required seats.
      *
-     * @return the required seats for the reservation
+     * @return the required seats
      */
     public Integer getRequiredSeats() {
-
         return requiredSeats;
     }
 
     /**
-     * Gets the date of the reservation
+     * Sets required seats.
      *
-     * @return the date of the reservation
+     * @param requiredSeats the required seats
      */
-    public LocalDate getDate() {
-        return date;
+    public void setRequiredSeats(int requiredSeats) {
+        this.requiredSeats = requiredSeats;
     }
 
     /**
-     * Gets the time of the reservation
+     * Get reservation info.
      *
-     * @return the time of the reservation
+     * @return the string
      */
-    public LocalTime getTime() {
-        return time;
-    }
-
-
-    /*@Override
-    public String toString(){
-        //TODO to string non serve per stampare dettagli ma per stampare ad esempio 1234445@hascode
-        return "Reservation: " + this.reservationName
-                + " Day: "
-                + this.date.format(DateTimeFormatter.ofPattern("dd/MM"))
-                + " Time: "
-                + this.time.format(DateTimeFormatter.ofPattern("HH:mm"));
-    }
-     */
-
-    public String infoReservation(){
-        return "Reservation: " + this.reservationName
-                + " Day: "
-                + this.date.format(DateTimeFormatter.ofPattern("dd/MM"))
-                + " Time: "
-                + this.time.format(DateTimeFormatter.ofPattern("HH:mm"));
-    }
-
-    public String getDetails(){
-        return "Reservation name: "+ reservationName + "seats "+ requiredSeats;
+    public String getReservationInfo(){
+        return  nominal + " " + requiredSeats;
     }
 }
