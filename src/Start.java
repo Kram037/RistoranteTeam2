@@ -102,7 +102,7 @@ public class Start {
 
         DatabaseTable databaseTable = new DatabaseTable();
 
-        databaseTable.insertDishInTable(8,"Bistecca","carne",20,FoodPreferencesEnum.FULL_MENU);
+        databaseTable.insertDishInTable(8,"Bistecca2","carne2",100,FoodPreferencesEnum.FULL_MENU);
 
 
     }

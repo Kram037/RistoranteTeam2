@@ -17,8 +17,12 @@ public class DatabaseTable{
         preparedStatement.setString(3,ingredients);
         preparedStatement.setInt(4,price);
         preparedStatement.setString(5,String.valueOf(foodPreference));
-        System.out.println("A new dish: "+ name + " was inserted");
-        connection.close();
+        preparedStatement.executeUpdate();
+        //if(rowsInsert > 0){
+            System.out.println("A new user was inserted successfully!");
+        //}
+
+
     }
     public static void main(String[] args){
 
