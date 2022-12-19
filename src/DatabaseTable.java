@@ -18,6 +18,7 @@ public class DatabaseTable{
         preparedStatement.setInt(4,price);
         preparedStatement.setString(5,String.valueOf(foodPreference));
         System.out.println("A new dish: "+ name + " was inserted");
+        connection.close();
     }
     public static void main(String[] args){
 
