@@ -5,6 +5,8 @@ import it.buisness.Bill;
 import restaurant.Reservation;
 import restaurant.Table;
 
+import java.sql.SQLException;
+
 
 /**
  * The type Start.
@@ -15,7 +17,7 @@ public class Start {
      *
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException{
 
         Menu menu = Menu.getInstance();
 
@@ -97,6 +99,11 @@ public class Start {
         bill1.addDishAToTheBill(drink1);
 
         bill1.printTheBill();
+
+        DatabaseTable databaseTable = new DatabaseTable();
+
+        databaseTable.insertDishInTable(7,"Pasta","grain",10,FoodPreferencesEnum.FULL_MENU);
+
 
     }
 }
