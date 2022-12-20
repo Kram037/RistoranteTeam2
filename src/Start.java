@@ -100,9 +100,10 @@ public class Start {
 
         bill1.printTheBill();
 
-        DatabaseTable databaseTable = new DatabaseTable();
+        DatabaseTable databaseTable = DatabaseTable.getInstance();
 
-        databaseTable.insertDishInTable(8,"Bistecca2","carne2",100,FoodPreferencesEnum.FULL_MENU);
+       //databaseTable.insertDishInDbTable(13,"Guscio","guscio",12500,FoodPreferencesEnum.FULL_MENU);
+        databaseTable.insertDishInDbTable2(13,dessert2);
 
 
     }

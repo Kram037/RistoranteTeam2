@@ -27,6 +27,7 @@ public class Desserts extends Dish{
 
     /**
      * Function for retrieving the DishTypeEnum.
+     *
      * @return dishTypeEnum
      */
     @Override

@@ -27,6 +27,7 @@ public class SecondCourses extends Dish {
 
     /**
      * Function for retrieving the DishTypeEnum.
+     *
      * @return dishTypeEnum
      */
     @Override

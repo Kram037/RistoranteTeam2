@@ -68,7 +68,7 @@ public class Dish{
    *
    * @return the preference of the customer.
    */
-  public FoodPreferencesEnum getPreference() {
+  public FoodPreferencesEnum getFoodPreference() {
     return preference;
   }
 
@@ -80,6 +80,7 @@ public class Dish{
   public DishTypeEnum getDishTypeEnum() {
     return dishTypeEnum;
   }
+
 
   /**
    * Print the details of the dish.

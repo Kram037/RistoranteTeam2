@@ -56,13 +56,13 @@ public class Course {
 
         if(customer.getFoodPreference() == FoodPreferencesEnum.VEGAN) {
             for (Dish dish : dishList) {
-                if(dish.getPreference() == FoodPreferencesEnum.VEGAN){
+                if(dish.getFoodPreference() == FoodPreferencesEnum.VEGAN){
                     dish.PrintInfoDish();
                 }
             }
         } else if(customer.getFoodPreference() == FoodPreferencesEnum.VEGETARIAN) {
             for (Dish dish : dishList) {
-                if(dish.getPreference() == FoodPreferencesEnum.VEGAN || dish.getPreference() == FoodPreferencesEnum.VEGETARIAN){
+                if(dish.getFoodPreference() == FoodPreferencesEnum.VEGAN || dish.getFoodPreference() == FoodPreferencesEnum.VEGETARIAN){
                     dish.PrintInfoDish();
                 }
             }
