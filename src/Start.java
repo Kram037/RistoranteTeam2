@@ -1,4 +1,6 @@
 import customer.Customer;
+import database.DatabaseSelect;
+import database.DatabaseTable;
 import entities.*;
 import enumerations.FoodPreferencesEnum;
 import it.buisness.Bill;
@@ -102,8 +104,15 @@ public class Start {
 
         DatabaseTable databaseTable = DatabaseTable.getInstance();
 
-       //databaseTable.insertDishInDbTable(13,"Guscio","guscio",12500,FoodPreferencesEnum.FULL_MENU);
-        databaseTable.insertDishInDbTable2(13,dessert2);
+       //databaseTable.insertDishInDbTable(18,"gigi","magro",2,FoodPreferencesEnum.FULL_MENU);
+
+       //databaseTable.insertDishInDbTable2(20,drink1);
+
+        DatabaseSelect databaseSelect = new DatabaseSelect();
+
+        databaseSelect.addDishesFromDbTable();
+
+       databaseSelect.printDishesInfo();
 
 
     }

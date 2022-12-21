@@ -30,6 +30,25 @@ public class Dish{
     this.preference = preference;
   }
 
+  public void setName(String name){
+    this.name = name;
+  }
+
+  public void setIngredients(String ingredients){
+    this.ingredients = ingredients;
+  }
+
+  public void setPrice(double price){
+    this.price = price;
+  }
+
+  public void setPreference(FoodPreferencesEnum preference){
+    this.preference = preference;
+  }
+
+  public void setDishTypeEnum(DishTypeEnum dishTypeEnum){
+    this.dishTypeEnum = dishTypeEnum;
+  }
 
   /**
    * Instantiates a new Dish.
