@@ -13,7 +13,10 @@ public class DatabaseMenu{
 
     private DatabaseMenu(){
     }
-    public static DatabaseMenu getIstance(){return databaseMenu;}
+
+    public static DatabaseMenu getIstance(){
+        return databaseMenu;
+    }
 
     public void createTableDbMenu() throws SQLException{
         Connection connection = DriverManager.getConnection(url,user,password);

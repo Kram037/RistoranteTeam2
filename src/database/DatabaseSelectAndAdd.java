@@ -1,21 +1,22 @@
 package database;
 
 import entities.Dish;
+import enumerations.DishTypeEnum;
 import enumerations.FoodPreferencesEnum;
 
 import java.sql.*;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DatabaseSelect{
+public class DatabaseSelectAndAdd{
 
-    private final static DatabaseSelect  databaseSelect= new DatabaseSelect();
+    private final static DatabaseSelectAndAdd databaseSelect = new DatabaseSelectAndAdd();
     private static final String url = "jdbc:mysql://localhost:3306/restaurant_database";
     private static final String user = "root";
     private static final String password = "password";
     private Set<Dish> dishes = new HashSet<>();
 
-    private DatabaseSelect(){
+    private DatabaseSelectAndAdd(){
     }
 
     public Set<Dish> getDishes(){
@@ -25,15 +26,19 @@ public class DatabaseSelect{
     public void setDishes(Set<Dish> dishes){
         this.dishes = dishes;
     }
-    public static DatabaseSelect getInstance(){return databaseSelect;}
+
+    public static DatabaseSelectAndAdd getInstance(){
+        return databaseSelect;
+    }
 
     /**
      * Prints all the details of the elements of the Set 'dishes' through a forEach
      */
     public void printDishesInfo(){
         dishes.forEach(single -> System.out.println(
-                "name: " + single.getName() + " ingredients: " + single.getIngredients() + " price: " +
-                        single.getPrice() + " food preference: " + single.getFoodPreference()));
+                "name: " + single.getName() + " ingredients: " + single.getIngredients() + " price: "
+                + single.getPrice() + " food preference: " + single.getFoodPreference() + " food type: "
+                + single.getDishTypeEnum()));
     }
 
     /**
@@ -49,6 +54,7 @@ public class DatabaseSelect{
             dish.setIngredients(resultSet.getString("ingredients"));
             dish.setPrice(resultSet.getDouble("price"));
             dish.setPreference(FoodPreferencesEnum.valueOf(resultSet.getString("food_preference")));
+            dish.setDishTypeEnum(DishTypeEnum.valueOf(resultSet.getString("food_type")));
             dishes.add(dish);
         }
         System.out.println("All rows have been added");
