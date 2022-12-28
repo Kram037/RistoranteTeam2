@@ -3,7 +3,7 @@ package enumerations;
 /**
  * The enum that declare the dishes type.
  */
-public enum DishTypeEnum {
+public enum DishTypeEnum{
     /**
      * Drink dish type enum.
      */
@@ -15,11 +15,11 @@ public enum DishTypeEnum {
     /**
      * Maincourse dish type enum.
      */
-    MAINCOURSE,
+    MAIN_COURSE,
     /**
      * Secondcourse dish type enum.
      */
-    SECONDCOURSE,
+    SECOND_COURSE,
     /**
      * Dessert dish type enum.
      */

@@ -14,7 +14,10 @@ public class Dish{
 
   private FoodPreferencesEnum preference;
   private DishTypeEnum dishTypeEnum;
-
+  /**
+   * Instantiates a new Dish.
+   */
+  public Dish(){}
   /**
    * Instantiates a new Dish.
    *
@@ -30,11 +33,25 @@ public class Dish{
     this.preference = preference;
   }
 
+  public void setName(String name){
+    this.name = name;
+  }
 
-  /**
-   * Instantiates a new Dish.
-   */
-  public Dish(){}
+  public void setIngredients(String ingredients){
+    this.ingredients = ingredients;
+  }
+
+  public void setPrice(double price){
+    this.price = price;
+  }
+
+  public void setPreference(FoodPreferencesEnum preference){
+    this.preference = preference;
+  }
+
+  public void setDishTypeEnum(DishTypeEnum dishTypeEnum){
+    this.dishTypeEnum = dishTypeEnum;
+  }
 
   /**
    * Gets name.
@@ -68,16 +85,11 @@ public class Dish{
    *
    * @return the preference of the customer.
    */
-  public FoodPreferencesEnum getPreference() {
+  public FoodPreferencesEnum getFoodPreference() {
     return preference;
   }
 
-  /**
-   * Gets dish type enum.
-   *
-   * @return the dish type.
-   */
-  public DishTypeEnum getDishTypeEnum() {
+  public DishTypeEnum getDishTypeEnum(){
     return dishTypeEnum;
   }
 
