@@ -2,6 +2,7 @@ package entities;
 
 import customer.Customer;
 import enumerations.FoodPreferencesEnum;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +51,7 @@ public class Course {
      * Prints every course according to customer preference
      * @param customer the customer to obtain his preference
      */
-    public void printPreferencedCourse(Customer customer){
+    public void printPreferenceCourse(@NotNull Customer customer){
 
         System.out.println("\n" + dishList.get(0).getClass().getSimpleName());
 

@@ -23,11 +23,12 @@ public class Dish{
    * @param price       the price of the dish.
    * @param preference  the preference of the customer.
    */
-  public Dish(String name, String ingredients, double price, FoodPreferencesEnum preference){
+  public Dish(String name, String ingredients, double price, FoodPreferencesEnum preference,DishTypeEnum dishTypeEnum){
     this.name = name;
     this.ingredients = ingredients;
     this.price = price;
     this.preference = preference;
+    this.dishTypeEnum = dishTypeEnum;
   }
 
   public void setName(String name){
