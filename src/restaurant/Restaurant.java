@@ -47,7 +47,8 @@ public class Restaurant {
             System.out.println("Error : the requested table is already occupied by other customers");
         } else if(( table.getInitialSeats() >= reservation.getRequiredSeats() )){
             myRestaurant.put(table,reservation);
-            table.reserveTable(reservation.getRequiredSeats());
+            table.setTableState(TableStatusEnum.OCCUPIED);
+            table.setAvailableSeats(table.getInitialSeats() - reservation.getRequiredSeats());
             System.out.println("è stato riservato");
         } else {
             System.out.println("There aren't enough available seats for this reservation");
@@ -68,7 +69,8 @@ public class Restaurant {
         }
         else {
             myRestaurant.remove(table, reservation);
-            table.freeTable();
+            table.setTableState(TableStatusEnum.AVAILABLE);
+            table.setAvailableSeats(table.getInitialSeats());
         }
     }
 
