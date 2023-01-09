@@ -50,6 +50,9 @@ public class Course{
      * @param customer the customer to obtain his preference
      */
     public void printPreferenceCourse(@NotNull Customer customer){
+        if (customer == null) {
+            throw new IllegalArgumentException("customer cannot be null");
+        }
 
         System.out.println("\n" + dishList.get(0).getClass().getSimpleName());
 
