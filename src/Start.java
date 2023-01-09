@@ -1,8 +1,5 @@
 import customer.Customer;
-import database.DatabaseDish;
-import database.DatabaseMenu;
-import database.DatabaseSelectAndAdd;
-import database.DatabaseInsert;
+import database.*;
 import entities.*;
 import enumerations.FoodPreferencesEnum;
 import it.buisness.Bill;
@@ -120,6 +117,10 @@ public class Start{
 
         DatabaseMenu databaseMenu = DatabaseMenu.getIstance();
 
+        DatabaseDelete databaseDelete = DatabaseDelete.getInstance();
+
+
+
         try{
             //databaseMenu.createTableDbMenu();
             //databaseDish.createTableDbDish();
@@ -128,13 +129,15 @@ public class Start{
                     databaseInsert.insertDishInDbTable(dish);
                 }
             }
-            //databaseInsert.insertDishInDbTable(drink6);
+            databaseInsert.insertDishInDbTable(drink6);
 
              */
             databaseSelect.addDishesFromDbTable();
+            //databaseDelete.delectDishFromDb(2);
         }catch(SQLException e){
             throw new RuntimeException(e);
         }
-        databaseSelect.printDishesInfo();
+        //databaseSelect.printDishesInfo();
+        System.out.println();
     }
 }
