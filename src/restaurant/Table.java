@@ -51,12 +51,28 @@ public class Table {
     }
 
     /**
+     * Sets the seats
+     * @param initialSeats
+     */
+    public void setInitialSeats(Integer initialSeats) {
+        this.initialSeats = initialSeats;
+    }
+
+    /**
      * Gets available seats.
      *
      * @return the available seats
      */
     public Integer getAvailableSeats() {
         return availableSeats;
+    }
+
+    /**
+     * Sets available seats.
+     * @param availableSeats
+     */
+    public void setAvailableSeats(Integer availableSeats) {
+        this.availableSeats = availableSeats;
     }
 
     /**
@@ -68,27 +84,16 @@ public class Table {
         return tableState;
     }
 
+    /**
+     * Sets table state.
+     * @param tableState
+     */
+    public void setTableState(TableStatusEnum tableState) {
+        this.tableState = tableState;
+    }
+
     public String getDetails(){
         return name+ " seats "+initialSeats+" avaible seats "+availableSeats+ " state: "+tableState;
-    }
-
-    /**
-     * method to free tables that changes table state to free and resets the available seats.
-     */
-    //TODO spostare logica nel restaurant
-    public void freeTable(){
-        this.tableState = TableStatusEnum.AVAILABLE;
-        this.availableSeats = this.initialSeats;
-    }
-
-    /**
-     * method to reserve tables that calculates available seats and sets the table state to occupied.
-     * @param requiredSeats the required seats
-     */
-    //TODO sistemare il bug
-    public void reserveTable(int requiredSeats){
-        this.availableSeats = initialSeats - requiredSeats;
-        this.tableState = TableStatusEnum.OCCUPIED;
     }
 
 }

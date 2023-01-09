@@ -27,6 +27,10 @@ public class Menu {
         return menu;
     }
 
+    public static List<Course> getCourseList(){
+        return courseList;
+    }
+
     /**
      * add an entire course to the courseList
      * @param course courseList
@@ -60,7 +64,7 @@ public class Menu {
             System.out.println("Menu " + customer.getFoodPreference().toString().toLowerCase());
 
             for (Course dishMenu : courseList) {
-                dishMenu.printPreferencedCourse(customer);
+                dishMenu.printPreferenceCourse(customer);
             }
         }
     }
