@@ -1,5 +1,8 @@
 package database;
 
+import entities.Dish;
+import restaurant.Table;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -23,18 +26,27 @@ public class DatabaseTable {
         Statement statement = connection.createStatement();
 
         String query1 = ""
-                + "CREATE TABLE `table` ( "
-                + "	`id_table` INT NOT NULL, "
+                + "CREATE TABLE `tables` ( "
+                + "	`id_table` INT(10) NOT NULL AUTO_INCREMENT , "
                 + "	`name` VARCHAR(50) NULL DEFAULT NULL, "
                 + "	`initial_seats` INT(10) NULL DEFAULT NULL, "
-                + "	`available_seats` INT(10) NULL DEFAULT NULL, "
-                + "	`Table_status` ENUM('AVAILABLE','OCCUPIED','RESERVERED') NOT NULL DEFAULT 'AVAILABLE', "
+                + " `table_status` ENUM('AVAILABLE' , 'OCCUPIED' , 'RESERVED') NOT NULL DEFAULT 'AVAILABLE', "
                 + "	PRIMARY KEY (`id_table`) "
                 + ") "
                 + "COLLATE='utf8mb4_0900_ai_ci';";
 
         statement.executeUpdate(query1);
         System.out.println("Table created!");
+        connection.close();
+    }
+
+    public void insertTableInDbTable(Table table) throws SQLException{
+        Connection connection = DriverManager.getConnection(url,user,password);
+        String insertQuery = "INSERT INTO tables (name,initial_seats,table_status) " + "VALUE ('"
+                + table.getName() + "', '" + table.getInitialSeats() +  "' ,  '" + table.getTableState() + "' );";
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(insertQuery);
+        System.out.println("A new table:  was inserted in database");
         connection.close();
     }
 }

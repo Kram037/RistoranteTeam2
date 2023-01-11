@@ -119,6 +119,8 @@ public class Start{
 
         DatabaseDelete databaseDelete = DatabaseDelete.getInstance();
 
+        DatabaseTable databaseTable = DatabaseTable.getIstance();
+
 
 
         try{
@@ -131,8 +133,12 @@ public class Start{
             }
             databaseInsert.insertDishInDbTable(drink6);
 
+
              */
-            databaseSelect.addDishesFromDbTable();
+           //databaseTable.createTableTable();
+              databaseTable.insertTableInDbTable(table1);
+
+           // databaseSelect.addDishesFromDbTable();
             //databaseDelete.delectDishFromDb(2);
         }catch(SQLException e){
             throw new RuntimeException(e);
