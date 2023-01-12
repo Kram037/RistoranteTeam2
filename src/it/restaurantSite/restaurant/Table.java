@@ -1,5 +1,5 @@
-package restaurant;
-import enumerations.TableStatusEnum;
+package it.restaurantSite.restaurant;
+import it.restaurantSite.enumerations.TableStatusEnum;
 
 /**
  * The class Table.

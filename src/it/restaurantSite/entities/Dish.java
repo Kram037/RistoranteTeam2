@@ -1,7 +1,7 @@
 
-package entities;
-import enumerations.DishTypeEnum;
-import enumerations.FoodPreferencesEnum;
+package it.restaurantSite.entities;
+import it.restaurantSite.enumerations.DishTypeEnum;
+import it.restaurantSite.enumerations.FoodPreferencesEnum;
 
 /**
  * Super class that is extended by all the dishes (Drinks, Appetizers, etc..).
@@ -24,7 +24,7 @@ public class Dish{
    * @param name        the name of the dish.
    * @param ingredients the ingredients of the dish.
    * @param price       the price of the dish.
-   * @param preference  the preference of the customer.
+   * @param preference  the preference of the it.restaurantSite.restaurant.customer.
    */
   public Dish(String name, String ingredients, double price, FoodPreferencesEnum preference){
     this.name = name;
@@ -83,7 +83,7 @@ public class Dish{
   /**
    * Gets preference.
    *
-   * @return the preference of the customer.
+   * @return the preference of the it.restaurantSite.restaurant.customer.
    */
   public FoodPreferencesEnum getFoodPreference() {
     return preference;

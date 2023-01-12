@@ -1,10 +1,10 @@
-import customer.Customer;
-import database.*;
-import entities.*;
-import enumerations.FoodPreferencesEnum;
-import it.buisness.Bill;
-import restaurant.Reservation;
-import restaurant.Table;
+import it.restaurantSite.customer.Customer;
+import it.restaurantSite.database.*;
+import it.restaurantSite.entities.*;
+import it.restaurantSite.enumerations.FoodPreferencesEnum;
+import it.restaurantSite.business.Bill;
+import it.restaurantSite.restaurant.Reservation;
+import it.restaurantSite.restaurant.Table;
 
 import java.sql.SQLException;
 
@@ -122,22 +122,22 @@ public class Start{
 
 
         try{
-            //databaseMenu.createTableDbMenu();
-            //databaseDish.createTableDbDish();
-            /*for (Course course1 : menu.getCourseList()){
-                for (Dish dish : course1.getDishList()){
-                    databaseInsert.insertDishInDbTable(dish);
-                }
-            }
-            databaseInsert.insertDishInDbTable(drink6);
+            //for (Course course1 : menu.getCourseList()){
+           //    for (Dish dish : course1.getDishList()){
+           //         databaseMenu.insertDishInDbTable(dish);
+           //     }
+           // }
 
-             */
-            databaseSelect.addDishesFromDbTable();
-            //databaseDelete.delectDishFromDb(2);
+          //menu.createTable("menu1");
+            //menu.deleteTable("menu6");
+            menu.insertNewRow("menu1",appetizer2);
+//menu.deleteRow("menu3",1);
+
         }catch(SQLException e){
             throw new RuntimeException(e);
         }
         //databaseSelect.printDishesInfo();
         System.out.println();
+
     }
 }

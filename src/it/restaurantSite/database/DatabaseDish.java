@@ -1,4 +1,4 @@
-package database;
+package it.restaurantSite.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,11 +1,11 @@
-package restaurant;
+package it.restaurantSite.restaurant;
 public class Reservation {
 
     private String nominal;
     private Integer requiredSeats;
 
     /**
-     * Instantiates a new Reservation with an already created customer list
+     * Instantiates a new Reservation with an already created it.restaurantSite.restaurant.customer list
      *
      * @param nominal the reservation id
      * @param requiredSeats  the required seats
