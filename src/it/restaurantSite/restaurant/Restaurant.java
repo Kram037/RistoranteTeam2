@@ -1,6 +1,6 @@
-package restaurant;
+package it.restaurantSite.restaurant;
 
-import enumerations.TableStatusEnum;
+import it.restaurantSite.enumerations.TableStatusEnum;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ public class Restaurant {
     }
 
     /**
-     * Gets instance of the restaurant singleton.
+     * Gets instance of the it.restaurantSite.restaurant singleton.
      *
      * @return the instance
      */
@@ -26,9 +26,9 @@ public class Restaurant {
     }
 
     /**
-     * Gets my restaurant map.
+     * Gets my it.restaurantSite.restaurant map.
      *
-     * @return the restaurant
+     * @return the it.restaurantSite.restaurant
      */
     public Map<Table, Reservation> getMyRestaurant() {
         return myRestaurant;
@@ -36,7 +36,7 @@ public class Restaurant {
 
     /**
      * A method to reserve tables that checks the table state and the table available seats
-     * adds table and reservation to the restaurant map
+     * adds table and reservation to the it.restaurantSite.restaurant map
      * modifies the table state and available seats
      *
      * @param table       the table
@@ -57,7 +57,7 @@ public class Restaurant {
 
     /**
      * A method to clean tables that checks the table state
-     * removes table and reservation from the restaurant map
+     * removes table and reservation from the it.restaurantSite.restaurant map
      * modifies the table state
      * @param table       the table
      * @param reservation the reservation
@@ -75,7 +75,7 @@ public class Restaurant {
     }
 
     /**
-     * Iterates through the restaurant map and prints the details of the table, reservation and customers.
+     * Iterates through the it.restaurantSite.restaurant map and prints the details of the table, reservation and customers.
      */
     public void printRestaurantInfo() {
         restaurant.getMyRestaurant().forEach((table, reservation) -> System.out.println(table.getName() +

@@ -1,7 +1,7 @@
-package entities;
+package it.restaurantSite.entities;
 
-import customer.Customer;
-import enumerations.FoodPreferencesEnum;
+import it.restaurantSite.customer.Customer;
+import it.restaurantSite.enumerations.FoodPreferencesEnum;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -45,13 +45,13 @@ public class Course{
     }
 
     /**
-     * Prints every course according to customer preference
+     * Prints every course according to it.restaurantSite.restaurant.customer preference
      *
-     * @param customer the customer to obtain his preference
+     * @param customer the it.restaurantSite.restaurant.customer to obtain his preference
      */
     public void printPreferenceCourse(@NotNull Customer customer){
         if (customer == null) {
-            throw new IllegalArgumentException("customer cannot be null");
+            throw new IllegalArgumentException("it.restaurantSite.restaurant.customer cannot be null");
         }
 
         System.out.println("\n" + dishList.get(0).getClass().getSimpleName());

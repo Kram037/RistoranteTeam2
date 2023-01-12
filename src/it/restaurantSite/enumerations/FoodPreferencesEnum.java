@@ -1,4 +1,4 @@
-package enumerations;
+package it.restaurantSite.enumerations;
 
 /**
  * The enum that declare the food preferences.

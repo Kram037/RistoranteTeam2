@@ -1,8 +1,8 @@
-package database;
+package it.restaurantSite.database;
 
-import entities.Dish;
-import enumerations.DishTypeEnum;
-import enumerations.FoodPreferencesEnum;
+import it.restaurantSite.enumerations.DishTypeEnum;
+import it.restaurantSite.enumerations.FoodPreferencesEnum;
+import it.restaurantSite.entities.Dish;
 
 import java.sql.*;
 import java.util.HashSet;

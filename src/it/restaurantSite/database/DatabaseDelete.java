@@ -1,4 +1,4 @@
-package database;
+package it.restaurantSite.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,11 +14,11 @@ public class DatabaseDelete{
     public static DatabaseDelete getInstance(){return databaseDelete;}
 
     /**
-     * Deletes a row from the Dish Table in the database
+     * Deletes a row from the Dish Table in the it.restaurantSite.restaurant.database
      * @param idDish it's the id row that will be deleted
      * @throws SQLException
      */
-    public void delectDishFromDb(int idDish) throws SQLException{
+    public void deleteDishFromDb(int idDish) throws SQLException{
         Connection connection = DriverManager.getConnection(url,user,password);
         String querySql = "DELETE FROM dish WHERE id_dish = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(querySql);
