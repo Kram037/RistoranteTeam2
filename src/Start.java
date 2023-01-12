@@ -137,7 +137,7 @@ public class Start{
             throw new RuntimeException(e);
         }
         //databaseSelect.printDishesInfo();
-        System.out.println();
+
 
     }
 }
