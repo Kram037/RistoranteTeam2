@@ -1,8 +1,7 @@
-package it.buisness;
+package it.restaurantSite.business;
 
-import entities.Dish;
-import restaurant.Reservation;
-import restaurant.Table;
+import it.restaurantSite.restaurant.Table;
+import it.restaurantSite.entities.Dish;
 
 import java.util.ArrayList;
 import java.util.List;
