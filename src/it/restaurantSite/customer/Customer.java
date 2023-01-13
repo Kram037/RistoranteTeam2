@@ -19,18 +19,11 @@ public class Customer {
         this.foodPreference = foodPreference;
     }
 
-    /**
-     * Gets it.restaurantSite.restaurant.customer name
-     * @return the it.restaurantSite.restaurant.customer name
-     */
+    //GETTERS
     public String getCustomerName() {
         return customerName;
     }
 
-    /**
-     * Gets food preference of the it.restaurantSite.restaurant.customer
-     * @return the food preference
-     */
     public FoodPreferencesEnum getFoodPreference() {
         return foodPreference;
     }

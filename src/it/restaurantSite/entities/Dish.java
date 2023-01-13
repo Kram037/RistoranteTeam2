@@ -1,4 +1,3 @@
-
 package it.restaurantSite.entities;
 import it.restaurantSite.enumerations.DishTypeEnum;
 import it.restaurantSite.enumerations.FoodPreferencesEnum;
@@ -33,6 +32,7 @@ public class Dish{
     this.preference = preference;
   }
 
+  // GETTERS AND SETTERS
   public void setName(String name){
     this.name = name;
   }
@@ -53,38 +53,22 @@ public class Dish{
     this.dishTypeEnum = dishTypeEnum;
   }
 
-  /**
-   * Gets name.
-   *
-   * @return the name of the dish.
-   */
+
   public String getName() {
     return name;
   }
 
-  /**
-   * Gets ingredients.
-   *
-   * @return the ingredients of the dish.
-   */
+
   public String getIngredients() {
     return ingredients;
   }
 
-  /**
-   * Gets price.
-   *
-   * @return the price of the dish.
-   */
+
   public double getPrice() {
     return price;
   }
 
-  /**
-   * Gets preference.
-   *
-   * @return the preference of the it.restaurantSite.restaurant.customer.
-   */
+
   public FoodPreferencesEnum getFoodPreference() {
     return preference;
   }
@@ -93,12 +77,4 @@ public class Dish{
     return dishTypeEnum;
   }
 
-  /**
-   * Print the details of the dish.
-   */
-  public void PrintInfoDish(){
-    System.out.println("Name: " + name
-            + " - Ingredients: " + ingredients
-            + " - Price : " + price);
-  }
 }

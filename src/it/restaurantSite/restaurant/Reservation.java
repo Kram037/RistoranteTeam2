@@ -15,30 +15,15 @@ public class Reservation {
         this.requiredSeats = requiredSeats;
     }
 
-    /**
-     * Gets reservation id.
-     *
-     * @return the reservation id
-     */
+    //GETTERS AND SETTERS
     public String getNominal() {
         return nominal;
     }
 
-
-    /**
-     * Gets required seats.
-     *
-     * @return the required seats
-     */
     public Integer getRequiredSeats() {
         return requiredSeats;
     }
 
-    /**
-     * Sets required seats.
-     *
-     * @param requiredSeats the required seats
-     */
     public void setRequiredSeats(int requiredSeats) {
         this.requiredSeats = requiredSeats;
     }

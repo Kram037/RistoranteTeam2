@@ -1,5 +1,4 @@
 import it.restaurantSite.customer.Customer;
-import it.restaurantSite.database.*;
 import it.restaurantSite.entities.*;
 import it.restaurantSite.enumerations.FoodPreferencesEnum;
 import it.restaurantSite.business.Bill;
@@ -27,11 +26,7 @@ public class Start{
         Dish drink3 = new Drinks("CocaCola","Water, sugar, food preservative, secret recipe",15,
                 FoodPreferencesEnum.VEGETARIAN);
 
-        Course drinksList = new Course();
-        drinksList.addDish(drink1);
-        drinksList.addDish(drink2);
-        drinksList.addDish(drink3);
-        menu.addDishMenu(drinksList);
+
 
 
         Dish appetizer1 = new Appetizers("Bruschetta","Bread, tomatoes, olive oil, garlic",5,FoodPreferencesEnum.VEGAN);
@@ -40,11 +35,6 @@ public class Start{
         Dish appetizer3 = new Appetizers("Shrimp Cocktail","Shrimp, mayo, ketchup, salt",10,
                 FoodPreferencesEnum.FULL_MENU);
 
-        Course appetizersList = new Course();
-        appetizersList.addDish(appetizer1);
-        appetizersList.addDish(appetizer2);
-        appetizersList.addDish(appetizer3);
-        menu.addDishMenu(appetizersList);
 
 
         Dish mainCourse1 = new MainCourses("Seafood linguine","Linguine, seafood",12,FoodPreferencesEnum.FULL_MENU);
@@ -53,23 +43,13 @@ public class Start{
         Dish mainCourse3 = new MainCourses("Gnocchetti alla bava","Potatoes gnocchi, cheese cream",10,
                 FoodPreferencesEnum.VEGETARIAN);
 
-        Course mainCoursesList = new Course();
-        mainCoursesList.addDish(mainCourse1);
-        mainCoursesList.addDish(mainCourse2);
-        mainCoursesList.addDish(mainCourse3);
-        menu.addDishMenu(mainCoursesList);
-
 
         Dish secondCourse1 = new SecondCourses("Florentine steak","Italian meat I.G.P.",50.00,
                 FoodPreferencesEnum.FULL_MENU);
         Dish secondCourse2 = new SecondCourses("Granny s cutlet","Lots of love",5.00,FoodPreferencesEnum.FULL_MENU);
         Dish secondCourse3 = new SecondCourses("Meat stew","Secret ingredients",8.00,FoodPreferencesEnum.FULL_MENU);
 
-        Course secondCoursesList = new Course();
-        secondCoursesList.addDish(secondCourse1);
-        secondCoursesList.addDish(secondCourse2);
-        secondCoursesList.addDish(secondCourse3);
-        menu.addDishMenu(secondCoursesList);
+
 
 
         Dish dessert1 = new Desserts("Catalan cream","Milk, eggs, sugar, lemon, cinnamon, cornstarch, brown sugar",
@@ -78,13 +58,6 @@ public class Start{
                 FoodPreferencesEnum.VEGETARIAN);
         Dish dessert3 = new Desserts("Fresh fruit salad, super fresh",
                 "Banana, kiwi, strawberries, green apple, tangerine",5,FoodPreferencesEnum.VEGAN);
-
-        Course dessertsList = new Course();
-        dessertsList.addDish(dessert1);
-        dessertsList.addDish(dessert2);
-        dessertsList.addDish(dessert3);
-        menu.addDishMenu(dessertsList);
-
 
 
         Customer pippo = new Customer("Pippo",FoodPreferencesEnum.FULL_MENU);
@@ -96,7 +69,7 @@ public class Start{
 
         Table table1 = new Table("Table 1",4);
 
-        menu.printPreferencedMenu(pippo);
+
 
         Reservation reservation1 = new Reservation("reservation1",5);
 
@@ -109,35 +82,19 @@ public class Start{
 
         bill1.printTheBill();
 
-        DatabaseInsert databaseInsert = DatabaseInsert.getInstance();
 
-        DatabaseSelectAndAdd databaseSelect = DatabaseSelectAndAdd.getInstance();
-
-        DatabaseDish databaseDish = DatabaseDish.getIstance();
-
-        DatabaseMenu databaseMenu = DatabaseMenu.getIstance();
-
-        DatabaseDelete databaseDelete = DatabaseDelete.getInstance();
 
 
 
         try{
-            //for (Course course1 : menu.getCourseList()){
-           //    for (Dish dish : course1.getDishList()){
-           //         databaseMenu.insertDishInDbTable(dish);
-           //     }
-           // }
-
-          //menu.createTable("menu1");
+            //menu.createTable("menu1");
             //menu.deleteTable("menu6");
             menu.insertNewRow("menu1",appetizer2);
-//menu.deleteRow("menu3",1);
+            //menu.deleteRow("menu3",1);
 
         }catch(SQLException e){
             throw new RuntimeException(e);
         }
         //databaseSelect.printDishesInfo();
-
-
     }
 }

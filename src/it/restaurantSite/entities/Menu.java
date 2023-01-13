@@ -1,11 +1,6 @@
 package it.restaurantSite.entities;
 import it.restaurantSite.databaseInterface.IDatabaseUpdate;
-import it.restaurantSite.enumerations.FoodPreferencesEnum;
-import it.restaurantSite.customer.Customer;
-
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The Singleton used for instantiate the menu.
@@ -16,7 +11,6 @@ public class Menu implements IDatabaseUpdate<Dish>{
 
     private static final String restaurantName = "I Secondini";
 
-    private static final List<Course> courseList = new ArrayList<>();
 
     private Menu(){}
 
@@ -29,54 +23,12 @@ public class Menu implements IDatabaseUpdate<Dish>{
         return menu;
     }
 
-    public static List<Course> getCourseList(){
-        return courseList;
-    }
 
     /**
      *
-     * @param course the course will be added
-     * @deprecated this method is deprecated since it was created before using database SQL
+     * @param tableName the name that the table will have
+     * @throws SQLException
      */
-    @Deprecated
-public void addDishMenu(Course course){
-        courseList.add(course);
-    }
-    /**
-     * Print the entire menu.
-     * @deprecated this method is deprecated since it was created before using database SQL
-     */
-    @Deprecated
-    public void printMenu(){
-
-        System.out.println("\n" + restaurantName);
-
-        for(Course dishMenu : courseList){
-            dishMenu.printCourse();
-        }
-    }
-
-    /**
-     *
-     * @param customer the customer whose preferences will be printed
-     * @deprecated this method is deprecated since it was created before using database SQL
-     */
-    @Deprecated
-    public void printPreferencedMenu(Customer customer) {
-
-        if (customer.getFoodPreference() == FoodPreferencesEnum.FULL_MENU) {
-            printMenu();
-        } else {
-            System.out.println("\n" + restaurantName);
-            System.out.println("Menu " + customer.getFoodPreference().toString().toLowerCase());
-
-            for (Course dishMenu : courseList) {
-                dishMenu.printPreferenceCourse(customer);
-            }
-        }
-    }
-
-
     @Override
     public void createTable(String tableName) throws SQLException{
         Connection connection = DriverManager.getConnection(this.url,this.user,this.password);
@@ -97,6 +49,11 @@ public void addDishMenu(Course course){
         connection.close();
     }
 
+    /**
+     *
+     * @param tableName the table that will be deleted
+     * @throws SQLException
+     */
     @Override
     public void deleteTable(String tableName) throws SQLException{
         Connection connection = DriverManager.getConnection(url,user,password);
@@ -107,6 +64,12 @@ public void addDishMenu(Course course){
         connection.close();
     }
 
+    /**
+     *
+     * @param tableName the name of the table where will be inserted the row
+     * @param dish generics that will be specified to be inserted into the correct table
+     * @throws SQLException
+     */
     @Override
     public void insertNewRow(String tableName,Dish dish) throws SQLException{
         Connection connection = DriverManager.getConnection(url,user,password);
@@ -119,7 +82,12 @@ public void addDishMenu(Course course){
         connection.close();
     }
 
-
+    /**
+     *
+     * @param tableName the table where the row will be deleted
+     * @param idDish to specify the id of the row that will be deleted
+     * @throws SQLException
+     */
     @Override
     public void deleteRow(String tableName,int idDish) throws SQLException{
         Connection connection = DriverManager.getConnection(url,user,password);
