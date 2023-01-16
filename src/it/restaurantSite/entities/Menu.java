@@ -95,5 +95,6 @@ public class Menu implements IDatabaseUpdate<Dish>{
         Statement statement = connection.createStatement();
         int row = statement.executeUpdate(querySql);
         System.out.println(row != 0 ?"The dish number "+idDish+" has been deleted":"The row doesn't exists");
+        connection.close();
     }
 }
