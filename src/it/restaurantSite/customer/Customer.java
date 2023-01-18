@@ -1,10 +1,16 @@
 package it.restaurantSite.customer;
+import it.restaurantSite.databaseInterface.IDatabaseUpdate;
 import it.restaurantSite.enumerations.FoodPreferencesEnum;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * The class that declare the Customer.
  */
-public class Customer {
+public class Customer implements IDatabaseUpdate<Customer>{
 
     private  String customerName;
     private FoodPreferencesEnum foodPreference;
@@ -34,18 +40,24 @@ public class Customer {
     public void infoCustomer(){
         System.out.println("Customer name: " + customerName + " Food preference: " + foodPreference);
     }
-
-    /**
-     * toString method to print the it.restaurantSite.restaurant.customer object details
-     * @return the string values of the variables in the Customer object
-     */
     @Override
-    public String toString() {
-        return "Customer{" +
-                "customerName='" + customerName +
-                ", foodPreference=" + foodPreference +
-                '}';
+    public void insertDatabaseNewRow(Customer customer) throws SQLException{
+        Connection connection = DriverManager.getConnection(url,user,password);
+        String insertQuery = "INSERT INTO customer (name,food_preference) "+ "VALUES ('"
+                             + customer.getCustomerName() + "', '" + customer.getFoodPreference() + "' );";
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(insertQuery);
+        System.out.println("A new customer: " + customer.getCustomerName() + " was inserted in the table customer");
+        connection.close();
     }
 
-
+    @Override
+    public void deleteDatabaseRow(int id) throws SQLException{
+        Connection connection = DriverManager.getConnection(url,user,password);
+        String querySql = "DELETE FROM `customer` WHERE (`id_customer` = '"+id+"');";
+        Statement statement = connection.createStatement();
+        int row = statement.executeUpdate(querySql);
+        System.out.println(row != 0 ?"The customer number "+id+" has been deleted":"The row doesn't exists");
+        connection.close();
+    }
 }

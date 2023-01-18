@@ -3,6 +3,7 @@ import it.restaurantSite.entities.*;
 import it.restaurantSite.enumerations.FoodPreferencesEnum;
 import it.restaurantSite.business.Bill;
 import it.restaurantSite.restaurant.Reservation;
+import it.restaurantSite.restaurant.Restaurant;
 import it.restaurantSite.restaurant.Table;
 
 import java.sql.SQLException;
@@ -18,7 +19,7 @@ public class Start{
      * @param args the input arguments
      */
     public static void main(String[] args){
-
+        Restaurant restaurant = Restaurant.getInstance();
         Menu menu = Menu.getInstance();
 
         Dish drink1 = new Drinks("Acqua Ferragni","Water",7.50,FoodPreferencesEnum.VEGAN);
@@ -87,11 +88,7 @@ public class Start{
 
 
         try{
-            //menu.createTable("menu1");
-            //menu.deleteTable("menu6");
-            menu.insertNewRow("menu1",appetizer2);
-            //menu.deleteRow("menu3",1);
-
+    restaurant.createDatabase();
         }catch(SQLException e){
             throw new RuntimeException(e);
         }
