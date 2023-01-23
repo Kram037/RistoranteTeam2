@@ -5,6 +5,18 @@ import java.sql.SQLException;
 
 public interface IDatabaseCreate extends IDatabaseDataPath{
     /**
+     * Creates a database SQL schema
+     * @throws SQLException catches any SQL exceptions
+     */
+    void createDatabaseSchema() throws SQLException;
+
+    /**
+     * Deletes the database
+     * @throws SQLException catches any SQL exceptions
+     */
+    void deleteDatabaseSchema() throws SQLException;
+
+    /**
      * Creates a table in the schema which is specified in the url
      * @throws SQLException catches any SQL exceptions
      */
@@ -16,15 +28,4 @@ public interface IDatabaseCreate extends IDatabaseDataPath{
      */
     void deleteDatabaseTables() throws SQLException;
 
-    /**
-     * Creates a database SQL schema
-     * @throws SQLException catches any SQL exceptions
-     */
-    void createDatabase() throws SQLException;
-
-    /**
-     * Deletes the database
-     * @throws SQLException catches any SQL exceptions
-     */
-    void deleteDatabase() throws SQLException;
 }

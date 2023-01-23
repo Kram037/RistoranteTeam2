@@ -1,12 +1,14 @@
 package it.restaurantSite.entities;
+import it.restaurantSite.databaseUtilities.DatabaseCreate;
 import it.restaurantSite.enumerations.DishTypeEnum;
 import it.restaurantSite.enumerations.FoodPreferencesEnum;
+
+import java.sql.SQLException;
 
 /**
  * Super class that is extended by all the dishes (Drinks, Appetizers, etc..).
  */
-public class Dish{
-  
+public class Dish extends DatabaseCreate{
   private String name;
   private String ingredients; 
   private double price;
@@ -30,6 +32,7 @@ public class Dish{
     this.ingredients = ingredients;
     this.price = price;
     this.preference = preference;
+
   }
 
   // GETTERS AND SETTERS
@@ -77,4 +80,18 @@ public class Dish{
     return dishTypeEnum;
   }
 
+
+  @Override
+  public void insertNewRow() throws SQLException{
+    getConnectionSqlCreateUpdate("INSERT INTO menu (name,ingredients,price,food_preference,food_type) "+ "VALUES ('"
+                                 + this.getName() + "', '" + this.getIngredients() + "', '" + this.getPrice() + "', '"
+                                 + this.getFoodPreference() + "', '" + this.getDishTypeEnum() + "' );");
+    System.out.println("The dish: "+this.getName()+" has been inserted!");
+  }
+
+  @Override
+  public void deleteRow(int id) throws SQLException{
+    getConnectionSqlCreateUpdate("DELETE FROM `menu` WHERE (`id_dish` = '"+id+"');");
+    System.out.println("The dish: "+this.getName()+" has been deleted!");
+  }
 }

@@ -18,4 +18,5 @@ public class Desserts extends Dish{
         super(name,ingredients,price,preference);
         setDishTypeEnum(DishTypeEnum.DESSERT);
     }
+
 }

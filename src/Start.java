@@ -61,12 +61,12 @@ public class Start{
                 "Banana, kiwi, strawberries, green apple, tangerine",5,FoodPreferencesEnum.VEGAN);
 
 
-        Customer pippo = new Customer("Pippo",FoodPreferencesEnum.FULL_MENU);
-        Customer pluto = new Customer("Pluto",FoodPreferencesEnum.FULL_MENU);
-        Customer paperino = new Customer("Paperino",FoodPreferencesEnum.VEGAN);
-        Customer micky = new Customer("Micky",FoodPreferencesEnum.FULL_MENU);
-        Customer minnie = new Customer("Minnie",FoodPreferencesEnum.FULL_MENU);
-        Customer daisy = new Customer("Daisy",FoodPreferencesEnum.FULL_MENU);
+        Customer pippo = new Customer("Pippo","pippo@gmail.com","pippo", FoodPreferencesEnum.FULL_MENU);
+        Customer pluto = new Customer("Pluto","plutoo@gmail.com","pluto", FoodPreferencesEnum.FULL_MENU);
+        Customer paperino = new Customer("Paperino","paperinoo@gmail.com","paperino", FoodPreferencesEnum.VEGAN);
+        Customer micky = new Customer("Micky","micky@gmail.com", "micky",FoodPreferencesEnum.FULL_MENU);
+        Customer minnie = new Customer("Minnie","minnie@gmail.com","minnie", FoodPreferencesEnum.FULL_MENU);
+        Customer daisy = new Customer("Daisy","daisy@gmail.com", "daisy",FoodPreferencesEnum.FULL_MENU);
 
         Table table1 = new Table("Table 1",4);
 
@@ -88,7 +88,9 @@ public class Start{
 
 
         try{
-    restaurant.createDatabase();
+               //pippo.createDatabaseTables();
+                //pippo.insertNewRow();
+                pippo.infoCustomer();
         }catch(SQLException e){
             throw new RuntimeException(e);
         }
