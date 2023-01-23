@@ -1,4 +1,5 @@
 package it.restaurantSite.customer;
+
 import it.restaurantSite.databaseInterface.IDatabaseUpdate;
 import it.restaurantSite.enumerations.FoodPreferencesEnum;
 
@@ -12,7 +13,7 @@ import java.sql.Statement;
  */
 public class Customer implements IDatabaseUpdate<Customer>{
 
-    private  String customerName;
+    private String customerName;
     private FoodPreferencesEnum foodPreference;
 
     /**
