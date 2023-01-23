@@ -65,7 +65,7 @@ public class Customer extends DatabaseCreate{
 
     /**
      * Methods to make customer insert a reservation
-     * @throws SQLException
+     * @throws throws a SQLException
      */
     public void insertNewReservation() throws SQLException{
         getConnectionSqlCreateUpdate("INSERT INTO reservation (name,food_preference) "+ "VALUES ('"
@@ -88,7 +88,7 @@ public class Customer extends DatabaseCreate{
 
     @Override
     public void createDatabaseTables() throws SQLException{
-        getConnectionSqlCreateUpdate( ""+"CREATE TABLE `customer` ( "
+        getConnectionSqlCreateUpdate( ""+"CREATE TABLE if not exists `customer` ( "
                 +"	`customer_id` INT(10) NOT NULL AUTO_INCREMENT, "
                 +"	`customer_name` VARCHAR(255) NOT NULL, "
                 +"	`customer_email` VARCHAR(255) NULL DEFAULT NULL, "

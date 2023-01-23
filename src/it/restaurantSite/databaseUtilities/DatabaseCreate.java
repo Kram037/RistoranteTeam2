@@ -13,8 +13,6 @@ public abstract class DatabaseCreate extends DatabaseConnection{
     }
 
 
-
-
     /**
      * To delete a database schema
      * @throws SQLException catches any SQL exception

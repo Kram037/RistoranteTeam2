@@ -7,8 +7,8 @@ import java.sql.Statement;
 
 public abstract class DatabaseConnection{
     private final String url = "jdbc:mysql://localhost:3306/newdb";
-    private final String user = "LD";
-    private final String password = "FocaMonaca";
+    private final String user = "root";
+    private final String password = "PinoDaniele03";
     private Connection connection;
     private Statement statement;
 
@@ -33,12 +33,10 @@ public abstract class DatabaseConnection{
     }
 
     public void getConnectionSqlCreateUpdate(String query) throws SQLException{
-    connection = DriverManager.getConnection(url,user,password);
-    statement = connection.createStatement();
-    statement.executeUpdate(query);
-    connection.close();
-
-
-}
+        connection = DriverManager.getConnection(url,user,password);
+        statement = connection.createStatement();
+        statement.executeUpdate(query);
+        connection.close();
+    }
 
 }

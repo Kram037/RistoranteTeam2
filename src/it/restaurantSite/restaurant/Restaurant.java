@@ -1,6 +1,5 @@
 package it.restaurantSite.restaurant;
 
-import it.restaurantSite.databaseInterface.IDatabaseCreate;
 import it.restaurantSite.enumerations.TableStatusEnum;
 
 import java.util.HashMap;

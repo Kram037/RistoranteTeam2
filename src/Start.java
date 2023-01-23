@@ -88,9 +88,9 @@ public class Start{
 
 
         try{
-               //pippo.createDatabaseTables();
+                pippo.createDatabaseTables();
                 //pippo.insertNewRow();
-                pippo.infoCustomer();
+                //pippo.infoCustomer();
         }catch(SQLException e){
             throw new RuntimeException(e);
         }
