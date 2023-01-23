@@ -1,16 +1,15 @@
 package it.restaurantSite.customer;
-import it.restaurantSite.databaseInterface.IDatabaseUpdate;
-import it.restaurantSite.enumerations.FoodPreferencesEnum;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import it.restaurantSite.databaseUtilities.DatabaseCreate;
+import it.restaurantSite.databaseUtilities.DatabaseUpdate;
+import it.restaurantSite.enumerations.FoodPreferencesEnum;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 
 /**
  * The class that declare the Customer.
  */
-public class Customer implements IDatabaseUpdate<Customer>{
+public class Customer extends DatabaseCreate{
 
     private  String customerName;
     private FoodPreferencesEnum foodPreference;
@@ -40,24 +39,33 @@ public class Customer implements IDatabaseUpdate<Customer>{
     public void infoCustomer(){
         System.out.println("Customer name: " + customerName + " Food preference: " + foodPreference);
     }
+
     @Override
-    public void insertDatabaseNewRow(Customer customer) throws SQLException{
-        Connection connection = DriverManager.getConnection(url,user,password);
-        String insertQuery = "INSERT INTO customer (name,food_preference) "+ "VALUES ('"
-                             + customer.getCustomerName() + "', '" + customer.getFoodPreference() + "' );";
-        Statement statement = connection.createStatement();
-        statement.executeUpdate(insertQuery);
-        System.out.println("A new customer: " + customer.getCustomerName() + " was inserted in the table customer");
-        connection.close();
+    public void insertNewRow() throws SQLException{
+        getConnectionSqlCreateUpdate("INSERT INTO customer (name,food_preference) "+ "VALUES ('"
+                                     + this.getCustomerName() + "', '" + this.getFoodPreference() + "' );");
+        System.out.println("The customer: "+this.getCustomerName()+" Has been inserted!");
     }
 
     @Override
-    public void deleteDatabaseRow(int id) throws SQLException{
-        Connection connection = DriverManager.getConnection(url,user,password);
-        String querySql = "DELETE FROM `customer` WHERE (`id_customer` = '"+id+"');";
-        Statement statement = connection.createStatement();
-        int row = statement.executeUpdate(querySql);
-        System.out.println(row != 0 ?"The customer number "+id+" has been deleted":"The row doesn't exists");
-        connection.close();
+    public void deleteRow(int id) throws SQLException{
+        getConnectionSqlCreateUpdate("DELETE FROM `customer` WHERE (`id_customer` = '"+id+"');");
+        System.out.println("The customer with id: "+id+" has been deleted");
+    }
+
+    @Override
+    public void createDatabaseTables() throws SQLException{
+        getConnectionSqlCreateUpdate("CREATE TABLE `customer` ( "
+                                     + "	`id_customer` INT(10) NOT NULL AUTO_INCREMENT, "
+                                     + "	`name` VARCHAR(50) NOT NULL, "
+                                     + "	`food_preference` ENUM('FULL_MENU','VEGETARIAN','VEGAN') NULL DEFAULT 'FULL_MENU', "
+                                     + "	PRIMARY KEY (`id_customer`))");
+        System.out.println("The table customer has been created!");
+    }
+
+    @Override
+    public void deleteDatabaseTables() throws SQLException{
+       getConnectionSqlCreateUpdate("DROP TABLE `customer`;");
+        System.out.println("The table has been deleted!");
     }
 }

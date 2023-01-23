@@ -1,17 +1,17 @@
 package it.restaurantSite.entities;
-import it.restaurantSite.databaseInterface.IDatabaseUpdate;
-import java.sql.*;
+
+
+import it.restaurantSite.databaseUtilities.DatabaseCreate;
+
+import java.sql.SQLException;
+
 
 /**
  * The Singleton used for instantiate the menu.
  */
-public class Menu implements IDatabaseUpdate<Dish>{
+public class Menu extends DatabaseCreate{
 
     private static final Menu menu = new Menu();
-
-    private static final String restaurantName = "I Secondini";
-
-
     private Menu(){}
 
     /**
@@ -24,25 +24,22 @@ public class Menu implements IDatabaseUpdate<Dish>{
     }
 
     @Override
-    public void insertDatabaseNewRow(Dish dish) throws SQLException{
-        Connection connection = DriverManager.getConnection(url,user,password);
-        String insertQuery = "INSERT INTO menu (name,ingredients,price,food_preference,food_type) "+ "VALUES ('"
-                             + dish.getName() + "', '" + dish.getIngredients() + "', '" + dish.getPrice() + "', '"
-                             + dish.getFoodPreference() + "', '" + dish.getDishTypeEnum() + "' );";
-        Statement statement = connection.createStatement();
-        statement.executeUpdate(insertQuery);
-        System.out.println("A new dish: " + dish.getName() + " was inserted in the table menu");
-        connection.close();
+    public void createDatabaseTables() throws SQLException{
+        getConnectionSqlCreateUpdate(""+"CREATE TABLE `menu` ( "
+                                     +"	`id_dish` INT(10) NOT NULL AUTO_INCREMENT, "
+                                     +"	`name` VARCHAR(255) NOT NULL, "
+                                     +"	`ingredients` VARCHAR(255) NULL DEFAULT NULL, "
+                                     +"	`price` INT(10) NOT NULL, "
+                                     +"	`food_preference` ENUM('FULL_MENU','VEGETARIAN','VEGAN') NULL DEFAULT NULL, "
+                                     +"	`food_type` ENUM('DRINK','APPETIZER','MAIN_COURSE','SECOND_COURSE','DESSERT') NULL DEFAULT NULL, "
+                                     +"	`photo` VARCHAR(255) NULL DEFAULT NULL, "
+                                     +"	`time_created` DATETIME NULL DEFAULT CURRENT_TIMESTAMP, "
+                                     +"	PRIMARY KEY (`id_dish`), "+"	UNIQUE INDEX `name` (`name`) );");
+        System.out.println("The table has been created!");
     }
 
-
     @Override
-    public void deleteDatabaseRow(int idDish) throws SQLException{
-        Connection connection = DriverManager.getConnection(url,user,password);
-        String querySql = "DELETE FROM `menu` WHERE (`id_dish` = '"+idDish+"');";
-        Statement statement = connection.createStatement();
-        int row = statement.executeUpdate(querySql);
-        System.out.println(row != 0 ?"The dish number "+idDish+" has been deleted":"The row doesn't exists");
-        connection.close();
+    public void deleteDatabaseTables() throws SQLException{
+        getConnectionSqlCreateUpdate("DROP TABLE `menu`;");
     }
 }

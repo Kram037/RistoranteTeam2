@@ -88,7 +88,7 @@ public class Start{
 
 
         try{
-    restaurant.createDatabase();
+pippo.deleteDatabaseTables();
         }catch(SQLException e){
             throw new RuntimeException(e);
         }
