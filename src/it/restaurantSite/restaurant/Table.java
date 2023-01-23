@@ -5,7 +5,7 @@ import it.restaurantSite.enumerations.TableStatusEnum;
  * The class Table.
  */
 public class Table {
-    private String name;
+    private String id;
     private Integer initialSeats;
     private Integer availableSeats;
     private TableStatusEnum tableState;
@@ -13,11 +13,11 @@ public class Table {
     /**
      * Instantiates a new Table.
      *
-     * @param name  the name
+     * @param id  the name
      * @param initialSeats the seats
      */
-    public Table(String name,int initialSeats) {
-        this.name = name;
+    public Table(String id, int initialSeats) {
+        this.id = id;
         this.initialSeats = initialSeats;
         this.availableSeats = initialSeats;
         this.tableState = TableStatusEnum.AVAILABLE;
@@ -28,17 +28,17 @@ public class Table {
      *
      * @return the name
      */
-    public String getName() {
-        return name;
+    public String getId() {
+        return id;
     }
 
     /**
      * Sets name.
      *
-     * @param name the name
+     * @param id the name
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
@@ -93,7 +93,7 @@ public class Table {
     }
 
     public String getDetails(){
-        return name+ " seats "+initialSeats+" avaible seats "+availableSeats+ " state: "+tableState;
+        return id + " seats "+initialSeats+" avaible seats "+availableSeats+ " state: "+tableState;
     }
 
 }

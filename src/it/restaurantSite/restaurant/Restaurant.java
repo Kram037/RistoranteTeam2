@@ -78,8 +78,10 @@ public class Restaurant {
      * Iterates through the it.restaurantSite.restaurant map and prints the details of the table, reservation and customers.
      */
     public void printRestaurantInfo() {
-        restaurant.getMyRestaurant().forEach((table, reservation) -> System.out.println(table.getName() +
+        restaurant.getMyRestaurant().forEach((table, reservation) -> System.out.println(table.getId() +
                 " is " + table.getTableState().toString().toLowerCase() +
                 " by reservation : " + reservation.getReservationInfo()));
     }
+
+
 }

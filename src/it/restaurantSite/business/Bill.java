@@ -54,7 +54,7 @@ public class Bill{
      * Iterates the dishesList to print the name and the price of dish and sums the prices to give the total
      */
     public void printTheBill(){
-        System.out.println("The bill for the "+table.getName()+":");
+        System.out.println("The bill for the "+table.getId()+":");
         for (Dish single : dishesList){
             System.out.println(single.getName()+" "+single.getPrice()+" €");
             total += single.getPrice();
