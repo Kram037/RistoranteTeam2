@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public abstract class DatabaseConnection{
-    private final String url = "jdbc:mysql://localhost:3306/newdb";
+    private final String url = "jdbc:mysql://localhost:3306/restaurant_database";
     private final String user = "root";
-    private final String password = "PinoDaniele03";
+    private final String password = "password";
     private Connection connection;
     private Statement statement;
 
@@ -36,6 +36,12 @@ public abstract class DatabaseConnection{
         connection = DriverManager.getConnection(url,user,password);
         statement = connection.createStatement();
         statement.executeUpdate(query);
+        connection.close();
+    }
+    public void getConnectionSqlSelectView(String query) throws SQLException{
+        connection = DriverManager.getConnection(url,user,password);
+        statement = connection.createStatement();
+        statement.executeQuery(query);
         connection.close();
     }
 
