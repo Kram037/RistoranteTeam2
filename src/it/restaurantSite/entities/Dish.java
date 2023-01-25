@@ -1,5 +1,5 @@
 package it.restaurantSite.entities;
-import it.restaurantSite.databaseUtilities.DatabaseCreate;
+import it.restaurantSite.databaseUtilities.DatabaseConnection;
 import it.restaurantSite.enumerations.DishTypeEnum;
 import it.restaurantSite.enumerations.FoodPreferencesEnum;
 
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * Super class that is extended by all the dishes (Drinks, Appetizers, etc..).
  */
-public class Dish extends DatabaseCreate{
+public class Dish extends DatabaseConnection{
   private String name;
   private String ingredients; 
   private double price;
@@ -81,7 +81,7 @@ public class Dish extends DatabaseCreate{
   }
 
 
-  @Override
+
   public void insertNewRow() throws SQLException{
     getConnectionSqlCreateUpdate("INSERT INTO menu (name,ingredients,price,food_preference,food_type) "+ "VALUES ('"
                                  + this.getName() + "', '" + this.getIngredients() + "', '" + this.getPrice() + "', '"
@@ -89,7 +89,7 @@ public class Dish extends DatabaseCreate{
     System.out.println("The dish: "+this.getName()+" has been inserted!");
   }
 
-  @Override
+
   public void deleteRow(int id) throws SQLException{
     getConnectionSqlCreateUpdate("DELETE FROM `menu` WHERE (`id_dish` = '"+id+"');");
     System.out.println("The dish: "+this.getName()+" has been deleted!");

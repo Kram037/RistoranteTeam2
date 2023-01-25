@@ -1,7 +1,7 @@
 package it.restaurantSite.entities;
 
 
-import it.restaurantSite.databaseUtilities.DatabaseCreate;
+import it.restaurantSite.databaseUtilities.DatabaseConnection;
 
 import java.sql.SQLException;
 
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 /**
  * The Singleton used for instantiate the menu.
  */
-public class Menu extends DatabaseCreate{
+public class Menu extends DatabaseConnection{
 
     private static final Menu menu = new Menu();
     private Menu(){}
@@ -23,7 +23,7 @@ public class Menu extends DatabaseCreate{
         return menu;
     }
 
-    @Override
+
     public void createDatabaseTables() throws SQLException{
         getConnectionSqlCreateUpdate(""+"CREATE TABLE `menu` ( "
                                      +"	`id_dish` INT(10) NOT NULL AUTO_INCREMENT, "
@@ -38,7 +38,6 @@ public class Menu extends DatabaseCreate{
         System.out.println("The table has been created!");
     }
 
-    @Override
     public void deleteDatabaseTables() throws SQLException{
         getConnectionSqlCreateUpdate("DROP TABLE `menu`;");
     }
